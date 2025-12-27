@@ -5,10 +5,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "docs:build": "vuepress-vite build vuepress-hope",
-    "docs:clean-dev": "vuepress-vite dev vuepress-hope --clean-cache",
+    "build": "vuepress-vite build vuepress-hope",
+    "clean-dev": "vuepress-vite dev vuepress-hope --clean-cache",
     "dev": "vuepress-vite dev vuepress-hope",
-    "docs:update-package": "pnpm dlx vp-update"
+    "update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.26",

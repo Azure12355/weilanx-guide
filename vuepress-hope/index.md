@@ -21,15 +21,15 @@ features:
   - title: Java 后端核心
     icon: map
     details: 深入 JVM 字节码与 JUC 并发编程，剖析 Spring 全家桶源码，构建高可用的分布式微服务架构。
-  
+
   - title: 架构设计思维
     icon: sitemap
     details: 从单体到云原生，探讨 DDD 领域驱动设计、高并发系统演进及中间件（Redis/MQ/ZK）的深度实践。
-  
+
   - title: AI 与未来编程
     icon: brain
     details: 拥抱 AIGC 时代，实战 LLM 大模型应用开发、Prompt Engineering 及 Python 数据分析自动化。
-  
+
   - title: 全栈开发视野
     icon: code
     details: 打通前后端壁垒，掌握 Vue3/React 现代前端技术，培养独立完成复杂系统的全栈工程能力。
@@ -41,18 +41,30 @@ footer: >
 footerHtml: true
 ---
 
-<!-- 1. 站长寄语 -->
-<div class="hint-container note custom-note">
-  <p class="hint-container-title" style="font-size: 1.2rem; margin-bottom: 10px;">站长寄语</p>
-  <div class="note-content">
-    <p>你好，我是 <span class='heighlight'>蔚蓝 (Weilan)</span>，一名热衷于技术探索的后端开发者。</p>
-    <p>在这个信息碎片化的时代，「蔚蓝空间栈」旨在抵抗浮躁，建立一个<span class='heighlight'>体系化、可复盘</span>的个人知识库。代码不仅是工具，更是逻辑与艺术的结合。希望这里的每一行文字，都能为你带来新的视角。</p>
+<!-- 1. 理念卡片 (Philosophy Section) -->
+<div class="section-container fade-in-up" style="animation-delay: 0.2s;">
+  <div class="philosophy-card">
+    <div class="philosophy-header">
+      <span class="badge">Stationmaster's Log</span>
+      <span class="date">EST. 2024</span>
+    </div>
+    <div class="philosophy-content">
+      <div class="avatar-wrapper">
+        <img src="/avatar.jpg" alt="Weilan" class="avatar">
+      </div>
+      <div class="text-wrapper">
+        <h3>你好，我是 <span class="gradient-text">蔚蓝 (Weilan)</span></h3>
+        <p>在这个算法与噪音并存的时代，我依然相信<b>深度阅读</b>与<b>系统化思考</b>的力量。</p>
+        <p>「蔚蓝空间栈」不仅是技术的堆砌，更是对 <span class="highlight">代码美学</span> 与 <span class="highlight">工程逻辑</span> 的极致追求。在这里，我们抵抗浮躁，重构边界，探索技术的星辰大海。</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <br/>
 
 <!-- 2. 知识星图 (原生 Grid 卡片) -->
+
 ### 🧭 知识星图
 
 这里是我正在维护的核心技术专栏，点击卡片即可直达：
@@ -127,12 +139,262 @@ footerHtml: true
 
 </div>
 
-<!-- 
+<!--
   ========================================================
   核心 CSS：仅主页显示动态背景 + 路由切换自动销毁
   ========================================================
 -->
 <style>
+
+  /* 
+  * ==========================================
+  * 1. 全局变量定义 (Design Tokens)
+  * ==========================================
+  */
+.vp-project-home {
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* 亮色模式玻璃参数 */
+    --glass-bg-light: rgba(255, 255, 255, 0.65);
+    --glass-border-light: rgba(255, 255, 255, 0.5);
+    --glass-shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --card-gradient-light: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+    
+    /* 暗色模式玻璃参数 */
+    --glass-bg-dark: rgba(20, 20, 20, 0.6);
+    --glass-border-dark: rgba(255, 255, 255, 0.08);
+    --glass-shadow-dark: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    --card-gradient-dark: linear-gradient(135deg, rgba(30,30,30,0.8), rgba(20,20,20,0.4));
+    
+    /* 品牌色 */
+    --text-gradient: linear-gradient(90deg, #007FFF, #00C6FF);
+    --highlight-bg: rgba(0, 127, 255, 0.1);
+    --highlight-color: #007FFF;
+}
+
+/* 
+ * 暗黑模式下的变量重写 
+ * 选择器含义：当 HTML 处于暗黑模式 且 在主页内部时
+ */
+html[data-theme="dark"] .vp-project-home {
+    /* 暗色模式玻璃参数 */
+    --glass-bg-dark: rgba(20, 20, 20, 0.6);
+    --glass-border-dark: rgba(255, 255, 255, 0.08);
+    --glass-shadow-dark: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    --card-gradient-dark: linear-gradient(135deg, rgba(30,30,30,0.8), rgba(20,20,20,0.4));
+}
+
+/* 
+ * ==========================================
+ * 2. 动态背景逻辑 - 仅限主页显示
+ * ==========================================
+ */
+
+/* 关键逻辑：利用 .vp-project-home 创建一个伪元素来承载背景 */
+/* 这样当路由切换到非主页时，该类名消失，背景也随之自动销毁 */
+.vp-project-home::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* 放在最底层 */
+  background: url('/bg.svg') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+/* 隐藏主页默认的背景色，让伪元素透出来 */
+.vp-project-home.project {
+   background: transparent !important;
+}
+
+/* 强制清除可能的全局背景干扰 */
+body {
+  background: none !important; 
+}
+#app, .theme-container, .vp-page {
+  background: transparent !important;
+}
+
+/* 
+  * ==========================================
+  * 3. 组件核心 CSS
+  * ==========================================
+  */
+
+/* 容器限制 */
+.section-container {
+    width: 100%;
+}
+
+/* 动画关键帧 */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 卡片主体 */
+.philosophy-card {
+    /* 玻璃拟态核心 */
+    background: var(--card-gradient-light);
+    backdrop-filter: blur(20px) saturate(180%); /* 模糊 + 饱和度提升 */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+    
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    
+    /* 入场动画 */
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    color: #333; /* 亮色模式文字颜色 */
+    transition: all 0.3s ease;
+}
+
+/* 头部标签栏 */
+.philosophy-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* 内容布局 */
+.philosophy-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* 头像区域 */
+.avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* 头像边框光环 */
+    border: 4px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 悬停时头像的趣味互动 */
+.philosophy-card:hover .avatar {
+    transform: rotate(12deg) scale(1.1);
+    border-color: rgba(255,255,255,0.6);
+}
+
+/* 文本排版 */
+.text-wrapper h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.text-wrapper p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+}
+
+/* 渐变文字特效 */
+.gradient-text {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    display: inline-block;
+}
+
+/* 高亮标记 */
+.highlight {
+    color: var(--highlight-color);
+    font-weight: 600;
+    background: var(--highlight-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+/* 
+  * ==========================================
+  * 4. 暗黑模式适配 (Dark Mode)
+  * ==========================================
+  */
+[data-theme="dark"] .philosophy-card {
+    background: var(--card-gradient-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 更细微的边框 */
+    box-shadow: var(--glass-shadow-dark);
+    color: #f0f0f0; /* 文字变白 */
+}
+
+[data-theme="dark"] .avatar {
+    border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .philosophy-card:hover .avatar {
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* 
+  * ==========================================
+  * 5. 移动端适配
+  * ==========================================
+  */
+@media (max-width: 768px) {
+    .philosophy-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .text-wrapper h3 {
+        font-size: 1.5rem;
+    }
+    
+    .philosophy-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 
+  * 演示用按钮样式 (不需要复制到项目中)
+  */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+[data-theme="dark"] .toggle-btn {
+    background: rgba(255,255,255,0.9);
+    color: black;
+}
 /* --- 1. 动态背景仅在主页显示 --- */
 
 /* 关键逻辑：利用 .home 类 (VuePress 主页独有) 创建一个伪元素来承载背景 */
@@ -301,4 +563,6 @@ html[data-theme="dark"] .custom-card:hover {
   color: #0d7fda;
   font-weight: bolder;
 }
+
+
 </style>

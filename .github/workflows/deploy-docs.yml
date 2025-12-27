@@ -1,10 +1,10 @@
-
 name: 部署文档
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,40 +13,37 @@ jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 代码
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # 如果你文档需要 Git 子模块，取消注释下一行
-          # submodules: true
 
       - name: 设置 pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9  # 这里指定 pnpm 版本，建议与本地一致
-
+          version: 9
 
       - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: pnpm
+          node-version: 20
+          # 删除了 cache: pnpm 以避免报错
 
       - name: 安装依赖
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+        # 这里去掉了 --frozen-lockfile，防止因为你没有提交 lock 文件而报错
+        run: pnpm install
 
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
+        run: |
           pnpm run build
-          > vuepress-hope/.vuepress/dist/.nojekyll
+          # 确保路径正确，如果你的输出在 docs/.vuepress/dist，请保留下行
+          touch vuepress-hope/.vuepress/dist/.nojekyll
 
-      - name: 部署文档
+      - name: 部署到 GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 部署文档
           branch: gh-pages
+          # 再次提醒：请确认这里是你真实的构建输出目录
           folder: vuepress-hope/.vuepress/dist

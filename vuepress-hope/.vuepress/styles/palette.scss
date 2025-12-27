@@ -11,4 +11,8 @@ $navbar-mobile-padding-y: 0.5rem !default;
 $sidebar-width: 18rem !default;
 $sidebar-mobile-width: 16rem !default;
 
-$content-width: 1000px;
+
+// font
+$vp-font: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "ST Heiti", sans-serif';
+$vp-font-heading: $vp-font !default;
+$vp-font-mono: 'ui-monospace, "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace' !default;

@@ -1,17 +1,17 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
-import { enNavbar, zhNavbar } from "./navbar/index.js";
-import { enSidebar, zhSidebar } from "./sidebar/index.js";
+import {  zhNavbar } from "./navbar/index.js";
+import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "蔚蓝Lynx",
+    url: "https://www.weilanx.com",
   },
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "/logo.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -19,25 +19,6 @@ export default hopeTheme({
 
   locales: {
     "/": {
-      // navbar
-      navbar: enNavbar,
-
-      // sidebar
-      sidebar: enSidebar,
-
-      footer: "Default footer",
-
-      displayFooter: true,
-
-      metaLocales: {
-        editLink: "Edit this page on GitHub",
-      },
-    },
-
-    /**
-     * Chinese locale config
-     */
-    "/zh/": {
       // navbar
       navbar: zhNavbar,
 

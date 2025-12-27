@@ -22,6 +22,8 @@ jobs:
 
       - name: 设置 pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 9  # 这里指定 pnpm 版本，建议与本地一致
 
 
       - name: 设置 Node.js

@@ -37,66 +37,60 @@ export const zhNavbar = navbar([
 
   {
     text: "剑指offer",
-    icon: "lightbulb",
+    icon: "game-icons:pointy-sword",
     prefix: "/algo/",
     link: "/algo/",
     children: [
       {
-        text: "Java基础篇",
-        icon: "lightbulb",
-        prefix: "base/",
-        link: "/java/base/"
+        text: "LeetCode题单",
+        icon: "uiw:map",
+        prefix: "/algo/",
+        link: "/algo/manual/"
       },
       {
-        text: "Java进阶篇",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/high/"
+        text: "LeetCode Hot100",
+        icon: "el:fire",
+        prefix: "/algo/",
+        link: "/algo/hot/"
       },
       {
-        text: "JUC并发编程",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/juc/"
-      },
-      {
-        text: "JVM虚拟机",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/jvm/"
+        text: "code top",
+        icon: "hugeicons:sword-03",
+        prefix: "/algo/",
+        link: "/algo/codetop/"
       },
     ],
   },
 
   {
     text: "计算机基础",
-    icon: "lightbulb",
-    prefix: "/algo/",
-    link: "/algo/",
+    icon: "el:fire",
+    prefix: "/408/",
+    link: "/408/",
     children: [
       {
-        text: "Java基础篇",
-        icon: "lightbulb",
-        prefix: "base/",
-        link: "/java/base/"
+        text: "数据结构",
+        icon: "lsicon:tree-filled",
+        prefix: "/408/",
+        link: "/408/ds/"
       },
       {
-        text: "Java进阶篇",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/high/"
+        text: "计算机组成原理",
+        icon: "heroicons:cpu-chip-20-solid",
+        prefix: "/408/",
+        link: "/408/co/"
       },
       {
-        text: "JUC并发编程",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/juc/"
+        text: "操作系统",
+        icon: "devicon-plain:archlinux",
+        prefix: "/408",
+        link: "/408/os/"
       },
       {
-        text: "JVM虚拟机",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/jvm/"
+        text: "计算机网络",
+        icon: "streamline-ultimate:network-pin",
+        prefix: "/408",
+        link: "/408/cn/"
       },
     ],
   },

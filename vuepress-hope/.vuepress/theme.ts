@@ -6,6 +6,8 @@ import { zhSidebar } from "./sidebar/index.js";
 export default hopeTheme({
   hostname: "https://guide.weilanx.com/",
 
+  favicon: "/logo.svg",
+
   author: {
     name: "蔚蓝Lynx",
     url: "https://www.weilanx.com",

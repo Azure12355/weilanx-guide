@@ -30,7 +30,7 @@ export const zhSidebar = sidebar({
   "/java/": [
     {
       text: "Java基础篇",
-      icon: "book",
+      icon: "lineicons:java",
       prefix: "base/",
       collapsible: true,
       expanded: false,
@@ -53,6 +53,16 @@ export const zhSidebar = sidebar({
             children: [
                 "java-keyword.md", 
                 "java-exception.md"
+            ],
+        },
+        {
+            text: "附录",
+            collapsible: true,
+            expanded: false,
+            prefix: "/java/base/appendix",
+            children: [
+                "java-math.md", 
+                "java-regex.md"
             ],
         },
       ]

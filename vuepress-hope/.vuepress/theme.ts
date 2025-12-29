@@ -4,7 +4,7 @@ import {  zhNavbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://guide.weilanx.com/",
 
   author: {
     name: "蔚蓝Lynx",
@@ -13,9 +13,14 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "azure12355/weilanx-guide",
 
   docsDir: "src",
+
+  toc: {
+    ignore: [],
+    levels: [1,6]
+  },
 
   locales: {
     "/": {

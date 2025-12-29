@@ -4,7 +4,7 @@ export const zhNavbar = navbar([
   "/",
   {
     text: "Java攻城狮",
-    icon: "lightbulb",
+    icon: "ri:java-fill",
     prefix: "/java/",
     link: "/java/",
     children: [
@@ -16,19 +16,19 @@ export const zhNavbar = navbar([
       },
       {
         text: "Java进阶篇",
-        icon: "lightbulb",
+        icon: "famicons:rocket-outline",
         prefix: "high/",
         link: "/java/high/"
       },
       {
         text: "JUC并发编程",
-        icon: "lightbulb",
+        icon: "streamline-sharp:computer-chip-1-remix",
         prefix: "high/",
         link: "/java/juc/"
       },
       {
         text: "JVM虚拟机",
-        icon: "lightbulb",
+        icon: "file-icons:virtualbox",
         prefix: "high/",
         link: "/java/jvm/"
       },

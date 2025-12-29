@@ -1,13 +1,13 @@
 ---
-title: Java正则表达式操作
-shortTitle: Java Regex
+title: Java 正则表达式操作
+shortTitle: Java 正则表达式
 description: 本篇内容介绍Java中的正则表达式相关的操作，零基础入门Regex正则表达式，包含了基础、进阶、实战相关内容。让你能够直接上手实操。
 author: 
     name: 蔚蓝Lynx,
     url: https://www.weilanx.com
     email: azure_ylt9217@163.com
 isOriginal: true;
-icon: fluent:math-formula-16-regular
+icon: bi:regex
 date: 2025-12-29
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Java数学相关操作
-shortTitle: Java数学操作
+title: Java 数学相关操作
+shortTitle: Java 数学操作
 description: 本篇内容介绍Java中数学相关的操作，包括小数、三角函数、随机数等等内容。也有相关的数学相关的实战案例
 author: 
     name: 蔚蓝Lynx,

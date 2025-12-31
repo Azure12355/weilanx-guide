@@ -29,14 +29,14 @@ export const zhSidebar = sidebar({
   ],
   "/java/": [
     {
-      text: "Java基础篇",
+      text: "Java 基础篇",
       icon: "lineicons:java",
       prefix: "base/",
       collapsible: true,
       expanded: false,
       children: [
         {
-            text: "一、Java概述&环境安装",
+            text: "一、Java 概述&环境安装",
             collapsible: true,
             expanded: false,
             prefix: "/java/base/00-overview",
@@ -46,13 +46,22 @@ export const zhSidebar = sidebar({
             ],
         },
         {
-            text: "二、Java基础语法",
+            text: "二、Java 基础语法",
             collapsible: true,
             expanded: false,
             prefix: "/java/base/01-syntax",
             children: [
                 "java-keyword.md", 
                 "java-exception.md"
+            ],
+        },
+        {
+            text: "三、Java 数组",
+            collapsible: true,
+            expanded: false,
+            prefix: "/java/base/03-array",
+            children: [
+                "java-array.md", 
             ],
         },
         {

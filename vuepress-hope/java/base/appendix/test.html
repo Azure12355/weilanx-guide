@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 正则表达式 | 蔚蓝空间栈</title>
+    <!-- 引入字体和图标 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 代码高亮库 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #0ea5e9; /* 蔚蓝 */
+            --accent: #22d3ee;  /* 青色光晕 */
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 动态星空背景 */
+        #canvas-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 头部 Hero */
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        /* 玻璃卡片通用样式 */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* 知识点表格 */
+        .syntax-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .syntax-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .syntax-code {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* 交互式实验室 Playground */
+        .playground-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .result-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            min-height: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+
+        .highlight-match {
+            background-color: rgba(14, 165, 233, 0.3);
+            border-bottom: 2px solid var(--accent);
+            color: #fff;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        /* 实战闯关 Quiz */
+        .quiz-option {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .quiz-option.correct {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: var(--success);
+        }
+
+        .quiz-option.wrong {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: var(--error);
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            font-weight: bold;
+            min-height: 1.5rem;
+        }
+
+        /* 代码块覆盖 */
+        pre[class*="language-"] {
+            background: rgba(0, 0, 0, 0.3) !important;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* 动画 */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .playground-container { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 背景画布 -->
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <div style="font-size: 3rem; margin-bottom: 10px;">🌌</div>
+            <h1>Java 正则表达式</h1>
+            <p class="tagline">沉浸式学习 · 交互式实验 · 实战演练</p>
+        </header>
+
+        <!-- 1. 核心速查 -->
+        <section class="card fade-in" style="animation-delay: 0.2s;">
+            <h2>⚡️ 核心语法速查</h2>
+            <div class="syntax-grid">
+                <div class="syntax-item">
+                    <span class="syntax-code">\d</span>
+                    <p>数字 [0-9]</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">\w</span>
+                    <p>单词字符 [a-zA-Z0-9_]</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">\s</span>
+                    <p>空白字符（空格/Tab/换行）</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">.</span>
+                    <p>任意字符（除换行）</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">*</span>
+                    <p>0 次或多次</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">+</span>
+                    <p>1 次或多次</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">?</span>
+                    <p>0 次或 1 次（或懒惰模式）</p>
+                </div>
+                <div class="syntax-item">
+                    <span class="syntax-code">^ ... $</span>
+                    <p>开头 ... 结尾</p>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(239, 68, 68, 0.1); border-left: 4px solid var(--error); border-radius: 4px;">
+                <strong>⚠️ Java 避坑指南：</strong> 在 Java 字符串中，反斜杠需要双重转义。例如匹配数字 <code>\d</code> 必须写成 <code>"\\d"</code>，匹配物理反斜杠 <code>\</code> 必须写成 <code>"\\\\"</code>。
+            </div>
+        </section>
+
+        <!-- 2. 交互式实验室 -->
+        <section class="card fade-in" style="animation-delay: 0.4s;">
+            <h2>🧪 正则实验室 (Playground)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">在此处输入正则表达式和测试文本，实时查看匹配结果。</p>
+            
+            <div class="playground-container">
+                <div class="controls">
+                    <div class="input-group">
+                        <label>正则表达式 (无需输入 //)</label>
+                        <input type="text" id="regex-input" value="\b[A-Z]\w+" placeholder="例如: \d{3}">
+                    </div>
+                    <div class="input-group">
+                        <label>测试文本</label>
+                        <textarea id="text-input" rows="5">Hello Java World! Here is code 12345.</textarea>
+                    </div>
+                </div>
+                <div class="output">
+                    <label>匹配结果高亮</label>
+                    <div id="result-display" class="result-box"></div>
+                    <div id="regex-error" style="color: var(--error); margin-top: 5px; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Java API 实战 -->
+        <section class="card fade-in" style="animation-delay: 0.6s;">
+            <h2>☕ Java API 最佳实践</h2>
+            <p style="margin-bottom: 1rem;">不要在循环中编译正则，利用 <code>static final Pattern</code> 提升性能。</p>
+            <pre><code class="language-java">// ✅ 正确用法：预编译 Pattern
+private static final Pattern EMAIL_PATTERN = Pattern.compile("^[\\w.-]+@[\\w.-]+\\.[a-z]+$");
+
+public boolean validateEmail(String email) {
+    // 复用 compiled pattern
+    return EMAIL_PATTERN.matcher(email).matches();
+}
+
+// ✂️ 字符串切割陷阱
+String str = "a,b,c,,";
+String[] res1 = str.split(",");     // 长度 3 (丢弃末尾空串)
+String[] res2 = str.split(",", -1); // 长度 5 (保留所有)</code></pre>
+        </section>
+
+        <!-- 4. 实战闯关 -->
+        <section class="card fade-in" style="animation-delay: 0.8s;">
+            <h2>⚔️ 猎人试炼：实战闯关</h2>
+            
+            <!-- 题目 1 -->
+            <div class="quiz-item" style="margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 1rem;">1. 想要从 Nginx 日志中提取时间 <code>[2023-10-01]</code> 中的日期部分，且不包含方括号，最精准的写法是？</p>
+                <div id="quiz-1">
+                    <button class="quiz-option" onclick="checkAnswer(1, 'A', this)">A. <code>\[.*\]</code></button>
+                    <button class="quiz-option" onclick="checkAnswer(1, 'B', this)">B. <code>\[(\d{4}-\d{2}-\d{2})\]</code></button>
+                    <button class="quiz-option" onclick="checkAnswer(1, 'C', this)">C. <code>(\d{4}-\d{2}-\d{2})</code></button>
+                </div>
+                <div id="feedback-1" class="feedback"></div>
+            </div>
+
+            <!-- 题目 2 -->
+            <div class="quiz-item">
+                <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 1rem;">2. 在强密码校验中，如何使用断言确保字符串包含至少一个大写字母？</p>
+                <div id="quiz-2">
+                    <button class="quiz-option" onclick="checkAnswer(2, 'A', this)">A. <code>(?=.*[A-Z])</code></button>
+                    <button class="quiz-option" onclick="checkAnswer(2, 'B', this)">B. <code>(?!.*[A-Z])</code></button>
+                    <button class="quiz-option" onclick="checkAnswer(2, 'C', this)">C. <code>[A-Z]+</code></button>
+                </div>
+                <div id="feedback-2" class="feedback"></div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; color: var(--text-muted); padding-bottom: 2rem;">
+            Made with ❤️ for Java Developers by 蔚蓝
+        </footer>
+    </div>
+
+    <!-- 脚本逻辑 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    
+    <script>
+        // --- 1. 动态星空背景 ---
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        const stars = [];
+
+        function initCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            stars.length = 0;
+            for(let i=0; i<100; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 2,
+                    speed: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = '#fff';
+            stars.forEach(star => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+                star.y -= star.speed;
+                if (star.y < 0) star.y = height;
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animateStars();
+
+        // --- 2. 正则实验室逻辑 ---
+        const regexInput = document.getElementById('regex-input');
+        const textInput = document.getElementById('text-input');
+        const resultDisplay = document.getElementById('result-display');
+        const errorDisplay = document.getElementById('regex-error');
+
+        function updatePlayground() {
+            const pattern = regexInput.value;
+            const text = textInput.value;
+            errorDisplay.textContent = '';
+
+            if (!pattern) {
+                resultDisplay.textContent = text;
+                return;
+            }
+
+            try {
+                // 使用全局匹配标志 'g'
+                const regex = new RegExp(pattern, 'g');
+                
+                // 简单的替换逻辑：将匹配到的文本包裹在 span 中
+                // 注意：这里为了防止 XSS，实际生产环境需要转义 HTML
+                const highlighted = text.replace(regex, (match) => {
+                    return `<span class="highlight-match">${match}</span>`;
+                });
+                
+                resultDisplay.innerHTML = highlighted.replace(/\n/g, '<br>'); // 处理换行
+            } catch (e) {
+                errorDisplay.textContent = "无效的正则表达式: " + e.message;
+                resultDisplay.textContent = text;
+            }
+        }
+
+        regexInput.addEventListener('input', updatePlayground);
+        textInput.addEventListener('input', updatePlayground);
+        updatePlayground(); // 初始化
+
+        // --- 3. 闯关逻辑 ---
+        const answers = { 1: 'B', 2: 'A' };
+        
+        function checkAnswer(qId, selectedOption, btnElement) {
+            const feedback = document.getElementById(`feedback-${qId}`);
+            const parent = document.getElementById(`quiz-${qId}`);
+            const buttons = parent.getElementsByTagName('button');
+            
+            // 禁用该题所有按钮
+            for(let btn of buttons) btn.disabled = true;
+
+            if (selectedOption === answers[qId]) {
+                btnElement.classList.add('correct');
+                feedback.style.color = 'var(--success)';
+                feedback.textContent = "🎉 正确！这正是提取分组 group(1) 的用法。";
+                if(qId === 2) feedback.textContent = "🎉 正确！(?=...) 是正向先行断言，不消耗字符，仅检查存在性。";
+            } else {
+                btnElement.classList.add('wrong');
+                feedback.style.color = 'var(--error)';
+                feedback.textContent = "❌ 答案不对哦，再复习一下上面的知识点吧。";
+            }
+        }
+    </script>
+</body>
+</html>

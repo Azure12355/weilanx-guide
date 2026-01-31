@@ -170,57 +170,93 @@ export const zhSidebar = sidebar({
       children: [
         {
           text: "STL 概述",
+          icon: "ri:file-list-3-line",
           link: "/langs/cpp/03-stl/overview.md",
         },
         {
           text: "容器",
+          icon: "fa6-solid:box-archive",
           collapsible: true,
           prefix: "/langs/cpp/03-stl/01-containers",
           children: [
             {
               text: "容器知识体系",
+              icon: "ri:node-tree",
               link: "/langs/cpp/03-stl/01-containers/container-system.md",
             },
             {
               text: "序列容器",
+              icon: "fa6-solid:arrow-right-long",
               link: "/langs/cpp/03-stl/01-containers/sequence.md",
             },
             {
               text: "关联容器",
+              icon: "fa6-solid:sitemap",
               link: "/langs/cpp/03-stl/01-containers/associative.md",
             },
             {
               text: "无序容器",
+              icon: "fa6-solid:shuffle",
               link: "/langs/cpp/03-stl/01-containers/unordered.md",
             },
           ],
         },
         {
           text: "迭代器",
+          icon: "ri:repeat-2-line",
           link: "/langs/cpp/03-stl/02-iterators/iterators.md",
         },
         {
           text: "算法",
+          icon: "fa6-solid:microchip",
           collapsible: true,
           prefix: "/langs/cpp/03-stl/03-algorithms",
           children: [
             {
               text: "查询算法",
+              icon: "fa6-solid:magnifying-glass",
               link: "/langs/cpp/03-stl/03-algorithms/query.md",
             },
             {
               text: "修改算法",
+              icon: "fa6-solid:pen-to-square",
               link: "/langs/cpp/03-stl/03-algorithms/modification.md",
             },
             {
               text: "数值算法",
+              icon: "fa6-solid:calculator",
               link: "/langs/cpp/03-stl/03-algorithms/numeric.md",
             },
           ],
         },
         {
           text: "函数对象",
+          icon: "fa6-solid:code-branch",
           link: "/langs/cpp/03-stl/04-function-objects/functors.md",
+        },
+        {
+          text: "STL 标准库速查",
+          icon: "ri:book-mark-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/langs/cpp/03-stl/99-reference",
+          children: [
+            {
+              text: "std::vector",
+              icon: "fa6-solid:layer-group",
+              link: "/langs/cpp/03-stl/99-reference/vector.md",
+            },
+            {
+              text: "std::string",
+              icon: "fa6-solid:font",
+              link: "/langs/cpp/03-stl/99-reference/string.md",
+            },
+            {
+              text: "std::map",
+              icon: "fa6-solid:sitemap",
+              link: "/langs/cpp/03-stl/99-reference/map.md",
+            },
+          ],
         },
       ],
     },

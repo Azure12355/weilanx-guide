@@ -564,5 +564,8 @@ html[data-theme="dark"] .custom-card:hover {
   font-weight: bolder;
 }
 
+.vp-hero-info-wrapper {
+  margin-top: 50px
+}
 
 </style>

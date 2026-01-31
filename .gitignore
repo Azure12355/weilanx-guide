@@ -8,3 +8,4 @@ vuepress-reco
 test/
 .DS_Store
 docs/**
+.serena/**

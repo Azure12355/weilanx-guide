@@ -10,7 +10,7 @@ tagline: 沉淀深度思考，重构技术边界。专注于沉浸式编程学�
 # 标题下方按钮
 actions:
   - text: 开启学习之旅
-    link: /java/
+    link: /java/base/
     type: primary
   - text: 关于蔚蓝
     link: https://www.weilanx.com/about

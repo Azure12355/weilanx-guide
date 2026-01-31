@@ -81,8 +81,8 @@ date: 2025-12-29
 
 |  场景 |  文本 |  正则匹配 |  结果 |  注意📢 |
 | :---: | --- | :---: | --- | :---: |
-|  提取标签<br/>贪婪模式 | ```html <div>A<div> <div>B<div> ```  | `<div>.*</div>` | ```html <div>A<div> <div>B<div> ```  | 没加 `?`是贪婪模式 |
-|  提取标签<br/>懒惰模式 | ```html <div>A<div> <div>B<div> ```  | `<div>.*?</div>` | ```html <div>A<div> ```  | 加上 `?`是懒惰模式 |
+|  提取标签 贪婪模式 | ```html <div>A<div> <div>B<div> ```  | `<div>.*</div>` | ```html <div>A<div> <div>B<div> ```  | 没加 `?`是贪婪模式 |
+|  提取标签 懒惰模式 | ```html <div>A<div> <div>B<div> ```  | `<div>.*?</div>` | ```html <div>A<div> ```  | 加上 `?`是懒惰模式 |
 
 
 ## （六）边界匹配

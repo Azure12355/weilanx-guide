@@ -75,43 +75,415 @@ export const zhSidebar = sidebar({
       expanded: false,
       children: [
         {
-            text: "一、Java 概述&环境安装",
-            collapsible: true,
-            expanded: false,
-            prefix: "/java/base/00-overview",
-            children: [
-                "java-overview.md",
-                "jdk-install.md"
-            ],
+          text: "一、Java 概述与环境",
+          icon: "ri:information-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/00-overview",
+          children: [
+            {
+              text: "Java 概述",
+              icon: "ri:book-2-line",
+              link: "/java/base/00-overview/overview.md",
+            },
+            {
+              text: "JDK 安装配置",
+              icon: "ri:download-cloud-2-line",
+              link: "/java/base/00-overview/jdk-install.md",
+            },
+            {
+              text: "Hello World",
+              icon: "ri:hand-coin-line",
+              link: "/java/base/00-overview/hello-world.md",
+            },
+          ],
         },
         {
-            text: "二、Java 基础语法",
-            collapsible: true,
-            expanded: false,
-            prefix: "/java/base/01-syntax",
-            children: [
-                "java-keyword.md",
-                "java-exception.md"
-            ],
+          text: "二、基础语法",
+          icon: "ri:code-s-slash-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/01-syntax",
+          children: [
+            {
+              text: "变量与数据类型",
+              icon: "ri:database-2-line",
+              link: "/java/base/01-syntax/variables.md",
+            },
+            {
+              text: "运算符",
+              icon: "ri:calculator-line",
+              link: "/java/base/01-syntax/operators.md",
+            },
+            {
+              text: "流程控制",
+              icon: "ri:flow-chart",
+              link: "/java/base/01-syntax/control-flow.md",
+            },
+            {
+              text: "关键字",
+              icon: "ri:key-2-line",
+              link: "/java/base/01-syntax/keywords.md",
+            },
+          ],
         },
         {
-            text: "三、Java 数组",
-            collapsible: true,
-            expanded: false,
-            prefix: "/java/base/03-array",
-            children: [
-                "java-array.md",
-            ],
+          text: "三、面向对象基础",
+          icon: "ri:git-merge-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/02-oop",
+          children: [
+            {
+              text: "类与对象",
+              icon: "ri:shape-line",
+              link: "/java/base/02-oop/class-object.md",
+            },
+            {
+              text: "封装",
+              icon: "ri:lock-2-line",
+              link: "/java/base/02-oop/encapsulation.md",
+            },
+            {
+              text: "继承",
+              icon: "ri:git-branch-line",
+              link: "/java/base/02-oop/inheritance.md",
+            },
+            {
+              text: "多态",
+              icon: "ri:shuffle-line",
+              link: "/java/base/02-oop/polymorphism.md",
+            },
+            {
+              text: "抽象类与接口",
+              icon: "ri:stack-line",
+              link: "/java/base/02-oop/abstract-interface.md",
+            },
+            {
+              text: "内部类",
+              icon: "ri:inbox-line",
+              link: "/java/base/02-oop/inner-class.md",
+            },
+          ],
         },
         {
-            text: "附录",
-            collapsible: true,
-            expanded: false,
-            prefix: "/java/base/appendix",
-            children: [
-                "java-math.md",
-                "java-regex.md"
-            ],
+          text: "四、数组与字符串",
+          icon: "ri:layout-grid-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/03-array-string",
+          children: [
+            {
+              text: "数组",
+              icon: "ri:layout-grid-line",
+              link: "/java/base/03-array-string/array.md",
+            },
+            {
+              text: "String 类",
+              icon: "ri:font-size-2",
+              link: "/java/base/03-array-string/string.md",
+            },
+            {
+              text: "StringBuilder/StringBuffer",
+              icon: "ri:edit-box-line",
+              link: "/java/base/03-array-string/string-builder.md",
+            },
+          ],
+        },
+        {
+          text: "五、集合框架",
+          icon: "ri:folder-3-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/04-collections",
+          children: [
+            {
+              text: "集合概述",
+              icon: "ri:map-pin-line",
+              link: "/java/base/04-collections/overview.md",
+            },
+            {
+              text: "Collection 接口",
+              icon: "ri:node-tree",
+              link: "/java/base/04-collections/collection.md",
+            },
+            {
+              text: "List 集合",
+              icon: "ri:list-ordered",
+              link: "/java/base/04-collections/list.md",
+            },
+            {
+              text: "Set 集合",
+              icon: "ri:checkbox-blank-circle-line",
+              link: "/java/base/04-collections/set.md",
+            },
+            {
+              text: "Map 集合",
+              icon: "ri:map-2-line",
+              link: "/java/base/04-collections/map.md",
+            },
+            {
+              text: "Collections 工具类",
+              icon: "ri:tools-line",
+              link: "/java/base/04-collections/collections-util.md",
+            },
+          ],
+        },
+        {
+          text: "六、异常处理",
+          icon: "ri:alert-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/05-exception",
+          children: [
+            {
+              text: "异常概述",
+              icon: "ri:error-warning-line",
+              link: "/java/base/05-exception/exception-overview.md",
+            },
+            {
+              text: "try-catch-finally",
+              icon: "ri:shield-check-line",
+              link: "/java/base/05-exception/try-catch.md",
+            },
+            {
+              text: "抛出异常",
+              icon: "ri:send-plane-fill",
+              link: "/java/base/05-exception/throw-throws.md",
+            },
+            {
+              text: "自定义异常",
+              icon: "ri:settings-3-line",
+              link: "/java/base/05-exception/custom-exception.md",
+            },
+          ],
+        },
+        {
+          text: "七、IO 流",
+          icon: "ri:exchange-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/06-io",
+          children: [
+            {
+              text: "File 类",
+              icon: "ri:file-line",
+              link: "/java/base/06-io/file-class.md",
+            },
+            {
+              text: "字节流",
+              icon: "ri:bits-line",
+              link: "/java/base/06-io/byte-stream.md",
+            },
+            {
+              text: "字符流",
+              icon: "ri:text",
+              link: "/java/base/06-io/char-stream.md",
+            },
+            {
+              text: "缓冲流",
+              icon: "ri:speed-line",
+              link: "/java/base/06-io/buffered-stream.md",
+            },
+            {
+              text: "对象流",
+              icon: "ri:box-3-line",
+              link: "/java/base/06-io/object-stream.md",
+            },
+            {
+              text: "NIO 入门",
+              icon: "ri:flashlight-line",
+              link: "/java/base/06-io/nio.md",
+            },
+          ],
+        },
+        {
+          text: "八、多线程基础",
+          icon: "ri:team-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/07-thread",
+          children: [
+            {
+              text: "线程概述",
+              icon: "ri:road-map-line",
+              link: "/java/base/07-thread/thread-overview.md",
+            },
+            {
+              text: "线程创建",
+              icon: "ri:add-circle-line",
+              link: "/java/base/07-thread/thread-create.md",
+            },
+            {
+              text: "线程生命周期",
+              icon: "ri-refresh-line",
+              link: "/java/base/07-thread/thread-lifecycle.md",
+            },
+            {
+              text: "线程同步",
+              icon: "ri:lock-line",
+              link: "/java/base/07-thread/thread-sync.md",
+            },
+            {
+              text: "线程通信",
+              icon: "ri:chat-3-line",
+              link: "/java/base/07-thread/thread-communication.md",
+            },
+          ],
+        },
+        {
+          text: "九、常用类与 API",
+          icon: "ri:apps-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/08-common-api",
+          children: [
+            {
+              text: "包装类",
+              icon: "ri:box-3-line",
+              link: "/java/base/08-common-api/wrapper-class.md",
+            },
+            {
+              text: "日期时间",
+              icon: "ri:time-line",
+              link: "/java/base/08-common-api/datetime.md",
+            },
+            {
+              text: "枚举",
+              icon: "ri:list-check",
+              link: "/java/base/08-common-api/enum.md",
+            },
+            {
+              text: "注解",
+              icon: "ri-price-tag-3-line",
+              link: "/java/base/08-common-api/annotation.md",
+            },
+          ],
+        },
+        {
+          text: "十、泛型与反射",
+          icon: "ri:lightbulb-flash-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/09-generic-reflection",
+          children: [
+            {
+              text: "泛型概述",
+              icon: "ri:question-line",
+              link: "/java/base/09-generic-reflection/generic-overview.md",
+            },
+            {
+              text: "泛型类、接口、方法",
+              icon: "ri:function-line",
+              link: "/java/base/09-generic-reflection/generic-detail.md",
+            },
+            {
+              text: "通配符",
+              icon: "ri:asterisk",
+              link: "/java/base/09-generic-reflection/wildcard.md",
+            },
+            {
+              text: "反射机制",
+              icon: "ri:reflection-line",
+              link: "/java/base/09-generic-reflection/reflection.md",
+            },
+          ],
+        },
+        {
+          text: "十一、网络编程",
+          icon: "ri:global-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/10-network",
+          children: [
+            {
+              text: "网络基础",
+              icon: "ri:router-line",
+              link: "/java/base/10-network/network-overview.md",
+            },
+            {
+              text: "UDP 通信",
+              icon: "ri:send-plane-line",
+              link: "/java/base/10-network/udp.md",
+            },
+            {
+              text: "TCP 通信",
+              icon: "ri:exchange-funds-line",
+              link: "/java/base/10-network/tcp.md",
+            },
+          ],
+        },
+        {
+          text: "十二、Lambda 与 Stream",
+          icon: "ri:magic-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/11-lambda-stream",
+          children: [
+            {
+              text: "Lambda 表达式",
+              icon: "ri:function-line",
+              link: "/java/base/11-lambda-stream/lambda.md",
+            },
+            {
+              text: "Stream API",
+              icon: "ri:flow-chart",
+              link: "/java/base/11-lambda-stream/stream.md",
+            },
+            {
+              text: "Optional 类",
+              icon: "ri:shield-check-line",
+              link: "/java/base/11-lambda-stream/optional.md",
+            },
+          ],
+        },
+        {
+          text: "十三、设计模式入门",
+          icon: "ri:layout-2-line",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/12-design-patterns",
+          children: [
+            {
+              text: "设计模式概述",
+              icon: "ri:book-open-line",
+              link: "/java/base/12-design-patterns/overview.md",
+            },
+            {
+              text: "单例模式",
+              icon: "ri:user-star-line",
+              link: "/java/base/12-design-patterns/singleton.md",
+            },
+            {
+              text: "工厂模式",
+              icon: "ri:building-4-line",
+              link: "/java/base/12-design-patterns/factory.md",
+            },
+            {
+              text: "观察者模式",
+              icon: "ri:eye-line",
+              link: "/java/base/12-design-patterns/observer.md",
+            },
+          ],
+        },
+        {
+          text: "附录",
+          icon: "ri:appendix",
+          collapsible: true,
+          expanded: false,
+          prefix: "/java/base/13-appendix",
+          children: [
+            {
+              text: "Java 常用方法",
+              icon: "ri:bookmark-line",
+              link: "/java/base/13-appendix/common-methods.md",
+            },
+            {
+              text: "正则表达式",
+              icon: "ri:regex",
+              link: "/java/base/13-appendix/regex.md",
+            },
+          ],
         },
       ]
     },

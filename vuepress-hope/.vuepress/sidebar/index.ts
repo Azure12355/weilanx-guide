@@ -614,19 +614,117 @@ export const zhSidebar = sidebar({
           prefix: "/langs/cpp/03-stl/99-reference",
           children: [
             {
-              text: "std::vector",
+              text: "序列容器",
               icon: "fa6-solid:layer-group",
-              link: "/langs/cpp/03-stl/99-reference/vector.md",
+              collapsible: true,
+              children: [
+                {
+                  text: "std::vector",
+                  icon: "fa6-solid:arrow-up-right-dots",
+                  link: "/langs/cpp/03-stl/99-reference/vector.md",
+                },
+                {
+                  text: "std::deque",
+                  icon: "fa6-solid:arrows-left-right-to-line",
+                  link: "/langs/cpp/03-stl/99-reference/deque.md",
+                },
+                {
+                  text: "std::array",
+                  icon: "fa6-solid:table-cells",
+                  link: "/langs/cpp/03-stl/99-reference/array.md",
+                },
+                {
+                  text: "std::list",
+                  icon: "fa6-solid:arrow-right-arrow-left",
+                  link: "/langs/cpp/03-stl/99-reference/list.md",
+                },
+                {
+                  text: "std::forward_list",
+                  icon: "fa6-solid:arrow-right-long",
+                  link: "/langs/cpp/03-stl/99-reference/forward_list.md",
+                },
+                {
+                  text: "std::string",
+                  icon: "fa6-solid:font",
+                  link: "/langs/cpp/03-stl/99-reference/string.md",
+                },
+              ],
             },
             {
-              text: "std::string",
-              icon: "fa6-solid:font",
-              link: "/langs/cpp/03-stl/99-reference/string.md",
-            },
-            {
-              text: "std::map",
+              text: "关联容器",
               icon: "fa6-solid:sitemap",
-              link: "/langs/cpp/03-stl/99-reference/map.md",
+              collapsible: true,
+              children: [
+                {
+                  text: "std::set",
+                  icon: "fa6-solid:circle-nodes",
+                  link: "/langs/cpp/03-stl/99-reference/set.md",
+                },
+                {
+                  text: "std::multiset",
+                  icon: "fa6-solid:circle-nodes",
+                  link: "/langs/cpp/03-stl/99-reference/multiset.md",
+                },
+                {
+                  text: "std::map",
+                  icon: "fa6-solid:sitemap",
+                  link: "/langs/cpp/03-stl/99-reference/map.md",
+                },
+                {
+                  text: "std::multimap",
+                  icon: "fa6-solid:sitemap",
+                  link: "/langs/cpp/03-stl/99-reference/multimap.md",
+                },
+              ],
+            },
+            {
+              text: "无序容器",
+              icon: "fa6-solid:shuffle",
+              collapsible: true,
+              children: [
+                {
+                  text: "std::unordered_set",
+                  icon: "fa6-solid:braille",
+                  link: "/langs/cpp/03-stl/99-reference/unordered_set.md",
+                },
+                {
+                  text: "std::unordered_multiset",
+                  icon: "fa6-solid:braille",
+                  link: "/langs/cpp/03-stl/99-reference/unordered_multiset.md",
+                },
+                {
+                  text: "std::unordered_map",
+                  icon: "fa6-solid:hashtag",
+                  link: "/langs/cpp/03-stl/99-reference/unordered_map.md",
+                },
+                {
+                  text: "std::unordered_multimap",
+                  icon: "fa6-solid:hashtag",
+                  link: "/langs/cpp/03-stl/99-reference/unordered_multimap.md",
+                },
+              ],
+            },
+            {
+              text: "容器适配器",
+              icon: "fa6-solid:boxes-stacked",
+              collapsible: true,
+              children: [
+                {
+                  text: "std::stack",
+                  icon: "fa6-solid:layer-group",
+                  link: "/langs/cpp/03-stl/99-reference/stack.md",
+                },
+                {
+                  text: "std::queue",
+                  icon: "fa6-solid:people-line",
+                  link: "/langs/cpp/03-stl/99-reference/queue.md",
+                },
+                {
+                  text: "std::priority_queue",
+                  icon: "fa6-solid:arrow-down-1-9",
+                  link: "/langs/cpp/03-stl/99-reference/priority_queue.md",
+                },
+              ],
             },
           ],
         },

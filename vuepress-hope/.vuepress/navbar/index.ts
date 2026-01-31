@@ -2,6 +2,47 @@ import { navbar } from "vuepress-theme-hope";
 
 export const zhNavbar = navbar([
   "/",
+
+  // 编程语言
+  {
+    text: "编程语言",
+    icon: "ri:code-box-line",
+    prefix: "/langs/",
+    link: "/langs/",
+    children: [
+      {
+        text: "Java",
+        icon: "ri:java-fill",
+        link: "/langs/java/",
+      },
+      {
+        text: "Python",
+        icon: "logos:python",
+        link: "/langs/python/",
+      },
+      {
+        text: "JavaScript",
+        icon: "logos:javascript",
+        link: "/langs/javascript/",
+      },
+      {
+        text: "Go",
+        icon: "logos:go",
+        link: "/langs/go/",
+      },
+      {
+        text: "C++",
+        icon: "devicon-plain:cplusplus",
+        link: "/langs/cpp/",
+      },
+      {
+        text: "Rust",
+        icon: "devicon-plain:rust",
+        link: "/langs/rust/",
+      },
+    ],
+  },
+
   {
     text: "Java攻城狮",
     icon: "ri:java-fill",
@@ -64,7 +105,7 @@ export const zhNavbar = navbar([
 
   {
     text: "计算机基础",
-    icon: "el:fire",
+    icon: "lsicon:server-filled",
     prefix: "/408/",
     link: "/408/",
     children: [
@@ -91,39 +132,6 @@ export const zhNavbar = navbar([
         icon: "streamline-ultimate:network-pin",
         prefix: "/408",
         link: "/408/cn/"
-      },
-    ],
-  },
-
-  {
-    text: "VibeCoding",
-    icon: "lightbulb",
-    prefix: "/algo/",
-    link: "/algo/",
-    children: [
-      {
-        text: "Java基础篇",
-        icon: "lightbulb",
-        prefix: "base/",
-        link: "/java/base/"
-      },
-      {
-        text: "Java进阶篇",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/high/"
-      },
-      {
-        text: "JUC并发编程",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/juc/"
-      },
-      {
-        text: "JVM虚拟机",
-        icon: "lightbulb",
-        prefix: "high/",
-        link: "/java/jvm/"
       },
     ],
   },

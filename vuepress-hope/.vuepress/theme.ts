@@ -99,16 +99,16 @@ export default hopeTheme({
     // },
 
     // install chart.js before enabling it
-    // chartjs: true,
+    chartjs: true,
 
     // install echarts before enabling it
-    // echarts: true,
+    echarts: true,
 
     // install flowchart.ts before enabling it
-    // flowchart: true,
+    flowchart: true,
 
     // install mermaid before enabling it
-    // mermaid: true,
+    mermaid: true,
 
     // playground: {
     //   presets: ["ts", "vue"],

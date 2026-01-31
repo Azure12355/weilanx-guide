@@ -875,4 +875,502 @@ export const zhSidebar = sidebar({
       ],
     },
   ],
+
+  "/langs/python/": [
+    {
+      text: "Python 概述",
+      icon: "logos:python",
+      link: "/langs/python/",
+    },
+    {
+      text: "概述与环境",
+      icon: "ri:information-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/00-overview",
+      children: [
+        {
+          text: "概述与环境总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/00-overview/README.md",
+        },
+        {
+          text: "Python 概述",
+          icon: "ri:book-2-line",
+          link: "/langs/python/00-overview/py-overview.md",
+        },
+        {
+          text: "环境安装配置",
+          icon: "ri:download-cloud-2-line",
+          link: "/langs/python/00-overview/py-env.md",
+        },
+        {
+          text: "Hello World",
+          icon: "ri:hand-coin-line",
+          link: "/langs/python/00-overview/hello-world.md",
+        },
+      ],
+    },
+    {
+      text: "基础语法",
+      icon: "ri:code-s-slash-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/01-basics",
+      children: [
+        {
+          text: "基础语法总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/01-basics/README.md",
+        },
+        {
+          text: "变量与数据类型",
+          icon: "ri:database-2-line",
+          link: "/langs/python/01-basics/variables.md",
+        },
+        {
+          text: "运算符",
+          icon: "ri:calculator-line",
+          link: "/langs/python/01-basics/operators.md",
+        },
+        {
+          text: "流程控制",
+          icon: "ri:flow-chart",
+          link: "/langs/python/01-basics/control-flow.md",
+        },
+        {
+          text: "字符串操作",
+          icon: "ri:font-size-2",
+          link: "/langs/python/01-basics/strings.md",
+        },
+      ],
+    },
+    {
+      text: "数据结构",
+      icon: "ri:layout-grid-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/02-data-structures",
+      children: [
+        {
+          text: "数据结构总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/02-data-structures/README.md",
+        },
+        {
+          text: "列表",
+          icon: "ri:list-ordered",
+          link: "/langs/python/02-data-structures/lists.md",
+        },
+        {
+          text: "元组",
+          icon: "ri:link",
+          link: "/langs/python/02-data-structures/tuples.md",
+        },
+        {
+          text: "字典",
+          icon: "ri:book-mark-line",
+          link: "/langs/python/02-data-structures/dicts.md",
+        },
+        {
+          text: "集合",
+          icon: "ri:checkbox-blank-circle-line",
+          link: "/langs/python/02-data-structures/sets.md",
+        },
+      ],
+    },
+    {
+      text: "函数式编程",
+      icon: "ri:function-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/03-functional",
+      children: [
+        {
+          text: "函数式编程总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/03-functional/README.md",
+        },
+        {
+          text: "函数",
+          icon: "ri:function-line",
+          link: "/langs/python/03-functional/functions.md",
+        },
+        {
+          text: "Lambda 表达式",
+          icon: "ri:lightbulb-line",
+          link: "/langs/python/03-functional/lambda.md",
+        },
+        {
+          text: "装饰器",
+          icon: "ri:artboard-line",
+          link: "/langs/python/03-functional/decorators.md",
+        },
+        {
+          text: "生成器与迭代器",
+          icon: "ri:refresh-line",
+          link: "/langs/python/03-functional/generators.md",
+        },
+      ],
+    },
+    {
+      text: "面向对象编程",
+      icon: "ri:git-branch-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/04-oop",
+      children: [
+        {
+          text: "OOP 总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/04-oop/README.md",
+        },
+        {
+          text: "类与对象",
+          icon: "ri:shape-line",
+          link: "/langs/python/04-oop/classes.md",
+        },
+        {
+          text: "继承",
+          icon: "ri:git-branch-line",
+          link: "/langs/python/04-oop/inheritance.md",
+        },
+        {
+          text: "多态与封装",
+          icon: "ri:shuffle-line",
+          link: "/langs/python/04-oop/polymorphism.md",
+        },
+        {
+          text: "魔术方法",
+          icon: "ri:magic-line",
+          link: "/langs/python/04-oop/magic-methods.md",
+        },
+        {
+          text: "元类与属性",
+          icon: "ri:settings-4-line",
+          link: "/langs/python/04-oop/metaclasses.md",
+        },
+      ],
+    },
+    {
+      text: "进阶特性",
+      icon: "ri:lightbulb-flash-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/05-advanced",
+      children: [
+        {
+          text: "进阶特性总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/05-advanced/README.md",
+        },
+        {
+          text: "异常处理",
+          icon: "ri:alert-line",
+          link: "/langs/python/05-advanced/exceptions.md",
+        },
+        {
+          text: "文件与 IO",
+          icon: "ri:file-text-line",
+          link: "/langs/python/05-advanced/files.md",
+        },
+        {
+          text: "上下文管理器",
+          icon: "ri:brackets-line",
+          link: "/langs/python/05-advanced/context-managers.md",
+        },
+        {
+          text: "模块与包",
+          icon: "ri:package-line",
+          link: "/langs/python/05-advanced/modules.md",
+        },
+      ],
+    },
+    {
+      text: "并发编程",
+      icon: "ri:git-merge-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/06-concurrency",
+      children: [
+        {
+          text: "并发编程总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/06-concurrency/README.md",
+        },
+        {
+          text: "多线程",
+          icon: "ri:team-line",
+          link: "/langs/python/06-concurrency/threading.md",
+        },
+        {
+          text: "多进程",
+          icon: "ri:cpu-line",
+          link: "/langs/python/06-concurrency/multiprocessing.md",
+        },
+        {
+          text: "异步编程",
+          icon: "ri:refresh-line",
+          link: "/langs/python/06-concurrency/asyncio.md",
+        },
+        {
+          text: "并发工具",
+          icon: "ri:tools-line",
+          link: "/langs/python/06-concurrency/concurrent-futures.md",
+        },
+      ],
+    },
+    {
+      text: "测试与调试",
+      icon: "ri:bug-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/07-testing",
+      children: [
+        {
+          text: "测试与调试总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/07-testing/README.md",
+        },
+        {
+          text: "单元测试",
+          icon: "ri:test-tube-line",
+          link: "/langs/python/07-testing/unit-testing.md",
+        },
+        {
+          text: "调试技巧",
+          icon: "ri:search-eye-line",
+          link: "/langs/python/07-testing/debugging.md",
+        },
+        {
+          text: "性能分析",
+          icon: "ri:speed-line",
+          link: "/langs/python/07-testing/profiling.md",
+        },
+        {
+          text: "代码质量",
+          icon: "ri:shield-check-line",
+          link: "/langs/python/07-testing/code-quality.md",
+        },
+      ],
+    },
+    {
+      text: "Web 开发",
+      icon: "ri:global-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/08-web",
+      children: [
+        {
+          text: "Web 开发总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/08-web/README.md",
+        },
+        {
+          text: "Flask 框架",
+          icon: "simple-icons:flask",
+          link: "/langs/python/08-web/flask.md",
+        },
+        {
+          text: "Django 框架",
+          icon: "simple-icons:django",
+          link: "/langs/python/08-web/django.md",
+        },
+        {
+          text: "FastAPI",
+          icon: "simple-icons:fastapi",
+          link: "/langs/python/08-web/fastapi.md",
+        },
+        {
+          text: "数据库操作",
+          icon: "ri:database-2-line",
+          link: "/langs/python/08-web/database.md",
+        },
+      ],
+    },
+    {
+      text: "数据科学",
+      icon: "ri:bar-chart-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/09-data-science",
+      children: [
+        {
+          text: "数据科学总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/09-data-science/README.md",
+        },
+        {
+          text: "NumPy",
+          icon: "simple-icons:numpy",
+          link: "/langs/python/09-data-science/numpy.md",
+        },
+        {
+          text: "Pandas",
+          icon: "simple-icons:pandas",
+          link: "/langs/python/09-data-science/pandas.md",
+        },
+        {
+          text: "数据可视化",
+          icon: "ri:pie-chart-line",
+          link: "/langs/python/09-data-science/visualization.md",
+        },
+        {
+          text: "数据获取",
+          icon: "ri:download-cloud-2-line",
+          link: "/langs/python/09-data-science/data-acquisition.md",
+        },
+      ],
+    },
+    {
+      text: "机器学习",
+      icon: "ri:brain-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/10-ml",
+      children: [
+        {
+          text: "机器学习总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/10-ml/README.md",
+        },
+        {
+          text: "Scikit-learn",
+          icon: "simple-icons:scikitlearn",
+          link: "/langs/python/10-ml/scikit-learn.md",
+        },
+        {
+          text: "PyTorch",
+          icon: "simple-icons:pytorch",
+          link: "/langs/python/10-ml/pytorch.md",
+        },
+        {
+          text: "TensorFlow",
+          icon: "simple-icons:tensorflow",
+          link: "/langs/python/10-ml/tensorflow.md",
+        },
+        {
+          text: "机器学习流程",
+          icon: "ri:git-pull-request-line",
+          link: "/langs/python/10-ml/ml-pipeline.md",
+        },
+      ],
+    },
+    {
+      text: "自动化",
+      icon: "ri:robot-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/11-automation",
+      children: [
+        {
+          text: "自动化总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/11-automation/README.md",
+        },
+        {
+          text: "脚本编程",
+          icon: "ri:terminal-box-line",
+          link: "/langs/python/11-automation/scripting.md",
+        },
+        {
+          text: "网络爬虫",
+          icon: "ri:global-line",
+          link: "/langs/python/11-automation/web-scraping.md",
+        },
+        {
+          text: "GUI 自动化",
+          icon: "ri:mouse-line",
+          link: "/langs/python/11-automation/gui-automation.md",
+        },
+        {
+          text: "自动化工具",
+          icon: "ri:tools-line",
+          link: "/langs/python/11-automation/automation-tools.md",
+        },
+      ],
+    },
+    {
+      text: "Python 高级",
+      icon: "ri:rocket-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/12-advanced-python",
+      children: [
+        {
+          text: "Python 高级总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/12-advanced-python/README.md",
+        },
+        {
+          text: "描述器协议",
+          icon: "ri:stack-line",
+          link: "/langs/python/12-advanced-python/descriptors.md",
+        },
+        {
+          text: "元类编程",
+          icon: "ri:code-box-line",
+          link: "/langs/python/12-advanced-python/metaclasses.md",
+        },
+        {
+          text: "反射与动态",
+          icon: "ri:magic-line",
+          link: "/langs/python/12-advanced-python/reflection.md",
+        },
+        {
+          text: "高级协程",
+          icon: "ri:refresh-line",
+          link: "/langs/python/12-advanced-python/advanced-async.md",
+        },
+      ],
+    },
+    {
+      text: "工程实践",
+      icon: "ri:build-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/13-engineering",
+      children: [
+        {
+          text: "工程实践总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/13-engineering/README.md",
+        },
+        {
+          text: "项目结构",
+          icon: "ri:folder-line",
+          link: "/langs/python/13-engineering/project-structure.md",
+        },
+        {
+          text: "依赖管理",
+          icon: "ri:links-line",
+          link: "/langs/python/13-engineering/dependency-management.md",
+        },
+        {
+          text: "打包发布",
+          icon: "ri:upload-cloud-line",
+          link: "/langs/python/13-engineering/packaging.md",
+        },
+        {
+          text: "容器化部署",
+          icon: "simple-icons:docker",
+          link: "/langs/python/13-engineering/docker.md",
+        },
+      ],
+    },
+    {
+      text: "实战项目",
+      icon: "ri:code-box-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/python/14-practice",
+      children: [
+        {
+          text: "项目总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/python/14-practice/README.md",
+        },
+      ],
+    },
+  ],
 });

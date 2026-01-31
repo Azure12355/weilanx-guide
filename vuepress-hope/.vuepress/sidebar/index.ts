@@ -75,6 +75,11 @@ export const zhSidebar = sidebar({
       expanded: false,
       children: [
         {
+          text: "学习路线",
+          icon: "ri:map-2-line",
+          link: "/java/base/",
+        },
+        {
           text: "一、Java 概述与环境",
           icon: "ri:information-line",
           collapsible: true,
@@ -535,6 +540,31 @@ export const zhSidebar = sidebar({
           icon: "ri:menu-2-line",
           link: "/langs/cpp/02-core-concepts/README.md",
         },
+        {
+          text: "指针与引用",
+          icon: "ri:cursor-line",
+          link: "/langs/cpp/02-core-concepts/pointers-references.md",
+        },
+        {
+          text: "内存管理",
+          icon: "ri:database-2-line",
+          link: "/langs/cpp/02-core-concepts/memory-management.md",
+        },
+        {
+          text: "const 与 constexpr",
+          icon: "ri:lock-line",
+          link: "/langs/cpp/02-core-concepts/const-constexpr.md",
+        },
+        {
+          text: "函数",
+          icon: "ri:function-line",
+          link: "/langs/cpp/02-core-concepts/functions.md",
+        },
+        {
+          text: "命名空间",
+          icon: "ri:layout-grid-line",
+          link: "/langs/cpp/02-core-concepts/namespaces.md",
+        },
       ],
     },
     {
@@ -549,6 +579,26 @@ export const zhSidebar = sidebar({
           icon: "ri:menu-2-line",
           link: "/langs/cpp/03-oop/README.md",
         },
+        {
+          text: "类与对象",
+          icon: "ri:shape-line",
+          link: "/langs/cpp/03-oop/class-object.md",
+        },
+        {
+          text: "继承",
+          icon: "ri:git-branch-line",
+          link: "/langs/cpp/03-oop/inheritance.md",
+        },
+        {
+          text: "多态",
+          icon: "ri:shuffle-line",
+          link: "/langs/cpp/03-oop/polymorphism.md",
+        },
+        {
+          text: "运算符重载",
+          icon: "ri:calculator-line",
+          link: "/langs/cpp/03-oop/operator-overloading.md",
+        },
       ],
     },
     {
@@ -562,6 +612,21 @@ export const zhSidebar = sidebar({
           text: "进阶特性总览",
           icon: "ri:menu-2-line",
           link: "/langs/cpp/04-advanced/README.md",
+        },
+        {
+          text: "模板",
+          icon: "ri:code-box-line",
+          link: "/langs/cpp/04-advanced/templates.md",
+        },
+        {
+          text: "异常处理",
+          icon: "ri:alert-line",
+          link: "/langs/cpp/04-advanced/exceptions.md",
+        },
+        {
+          text: "预处理器",
+          icon: "ri:code-s-slash-line",
+          link: "/langs/cpp/04-advanced/preprocessor.md",
         },
       ],
     },

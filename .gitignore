@@ -4,3 +4,7 @@ vuepress-hope/.vuepress/.cache/
 vuepress-hope/.vuepress/.temp/
 vuepress-hope/.vuepress/dist/
 vuepress-reco
+
+test/
+.DS_Store
+docs/**

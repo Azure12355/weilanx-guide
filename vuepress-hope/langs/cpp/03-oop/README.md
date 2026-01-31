@@ -18,37 +18,30 @@ order: 4
 
 <VPCard
   title="类与对象"
-  desc="类的定义、构造函数、析构函数、成员变量与成员函数"
+  desc="类的定义、构造函数、析构函数、成员初始化列表、this 指针"
   logo="https://api.iconify.design/ri/shape-line.svg"
-  link="/langs/cpp/03-oop/class-object/"
-/>
-
-<VPCard
-  title="封装与访问控制"
-  desc="public、protected、private、友元"
-  logo="https://api.iconify.design/ri/lock-2-line.svg"
-  link="/langs/cpp/03-oop/encapsulation/"
+  link="/langs/cpp/03-oop/class-object.md"
 />
 
 <VPCard
   title="继承"
-  desc="单继承、多继承、虚继承、菱形问题"
+  desc="单继承、多继承、虚继承、访问控制、构造析构顺序"
   logo="https://api.iconify.design/ri/git-branch-line.svg"
-  link="/langs/cpp/03-oop/inheritance/"
+  link="/langs/cpp/03-oop/inheritance.md"
 />
 
 <VPCard
   title="多态"
-  desc="虚函数、纯虚函数、抽象类、override、final"
+  desc="虚函数、纯虚函数、抽象类、override、final、RTTI"
   logo="https://api.iconify.design/ri/shuffle-line.svg"
-  link="/langs/cpp/03-oop/polymorphism/"
+  link="/langs/cpp/03-oop/polymorphism.md"
 />
 
 <VPCard
   title="运算符重载"
-  desc="成员函数 vs 全局函数、常见运算符重载"
-  logo="https://api.iconify.design/ri/functions-line.svg"
-  link="/langs/cpp/03-oop/operator-overloading/"
+  desc="算术运算符、关系运算符、赋值运算符、下标运算符、函数调用运算符"
+  logo="https://api.iconify.design/ri/calculator-line.svg"
+  link="/langs/cpp/03-oop/operator-overloading.md"
 />
 
 ## 学习路径
@@ -59,6 +52,11 @@ flowchart LR
     A --> C[继承]
     C --> D[多态]
     B --> E[运算符重载]
+
+    A --> A1[构造与析构]
+    C --> C1[虚继承]
+    D --> D1[抽象类]
+    E --> E1[类型转换]
 ```
 
 ::: center
@@ -108,3 +106,33 @@ Base* ptr = new Derived();
 ptr->virtualMethod();  // 调用 Derived::virtualMethod
 delete ptr;
 ```
+
+## 学习建议
+
+::: tabs
+
+@tab 循序渐进
+
+1. **先学类与对象**：理解封装的基本概念
+2. **掌握构造析构**：资源获取即初始化（RAII）
+3. **学习继承**：建立类层次结构
+4. **深入多态**：虚函数与动态绑定
+5. **运算符重载**：使类更自然易用
+
+@tab 重点难点
+
+- **构造函数**：初始化列表、委托构造
+- **虚析构函数**：确保正确析构派生类
+- **纯虚函数**：定义抽象接口
+- **菱形继承**：使用虚继承解决
+- **运算符重载**：保持语义一致性
+
+@tab 实践建议
+
+- 遵循 RAII 惯用法管理资源
+- 基类析构函数声明为 virtual
+- 使用 override 明确重写虚函数
+- 优先使用组合而非继承
+- 运算符重载保持自然语义
+
+:::

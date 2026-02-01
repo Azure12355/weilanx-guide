@@ -9,5 +9,4 @@ icon: lightbulb
 
 ## 详情
 
-- [ray](ray.md)
-- ...
+- 更多内容正在更新中...

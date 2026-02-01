@@ -7,10 +7,8 @@ icon: lightbulb
 
 ### Bar
 
-- [baz](bar/baz.md)
-- ...
+- [测试](/guide/bar/README.md)
 
 ### Foo
 
-- [ray](foo/ray.md)
-- ...
+- [测试](/guide/foo/README.md)

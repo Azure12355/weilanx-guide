@@ -271,7 +271,7 @@ core.do_something()
 
 ## 贡献
 
-欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md)
+欢迎贡献！请查看项目仓库的贡献指南。
 
 ## 许可证
 

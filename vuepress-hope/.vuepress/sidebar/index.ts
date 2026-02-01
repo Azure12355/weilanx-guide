@@ -1373,4 +1373,542 @@ export const zhSidebar = sidebar({
       ],
     },
   ],
+
+  "/langs/javascript/": [
+    {
+      text: "JavaScript 概述",
+      icon: "logos:javascript",
+      link: "/langs/javascript/",
+    },
+    {
+      text: "概述与环境",
+      icon: "ri:information-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/00-overview",
+      children: [
+        {
+          text: "概述总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/00-overview/README.md",
+        },
+        {
+          text: "JavaScript 概述",
+          icon: "ri:book-2-line",
+          link: "/langs/javascript/00-overview/js-overview.md",
+        },
+        {
+          text: "开发环境配置",
+          icon: "ri:download-cloud-2-line",
+          link: "/langs/javascript/00-overview/js-env.md",
+        },
+        {
+          text: "Hello World",
+          icon: "ri:hand-coin-line",
+          link: "/langs/javascript/00-overview/hello-world.md",
+        },
+      ],
+    },
+    {
+      text: "基础语法",
+      icon: "ri:code-s-slash-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/01-basics",
+      children: [
+        {
+          text: "基础语法总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/01-basics/README.md",
+        },
+        {
+          text: "变量与声明",
+          icon: "ri:database-2-line",
+          link: "/langs/javascript/01-basics/variables.md",
+        },
+        {
+          text: "运算符",
+          icon: "ri:calculator-line",
+          link: "/langs/javascript/01-basics/operators.md",
+        },
+        {
+          text: "流程控制",
+          icon: "ri:flow-chart",
+          link: "/langs/javascript/01-basics/control-flow.md",
+        },
+        {
+          text: "循环结构",
+          icon: "ri:repeat-line",
+          link: "/langs/javascript/01-basics/loops.md",
+        },
+      ],
+    },
+    {
+      text: "数据类型与结构",
+      icon: "ri:layout-grid-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/02-types-structures",
+      children: [
+        {
+          text: "数据类型总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/02-types-structures/README.md",
+        },
+        {
+          text: "原始类型",
+          icon: "ri:checkbox-blank-circle-line",
+          link: "/langs/javascript/02-types-structures/primitives.md",
+        },
+        {
+          text: "对象基础",
+          icon: "ri:shape-line",
+          link: "/langs/javascript/02-types-structures/objects.md",
+        },
+        {
+          text: "数组",
+          icon: "ri:list-ordered",
+          link: "/langs/javascript/02-types-structures/arrays.md",
+        },
+        {
+          text: "字符串",
+          icon: "ri:font-size-2",
+          link: "/langs/javascript/02-types-structures/strings.md",
+        },
+        {
+          text: "类型转换",
+          icon: "ri:exchange-line",
+          link: "/langs/javascript/02-types-structures/types-conversion.md",
+        },
+      ],
+    },
+    {
+      text: "函数与作用域",
+      icon: "ri:function-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/03-functions-scope",
+      children: [
+        {
+          text: "函数总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/03-functions-scope/README.md",
+        },
+        {
+          text: "函数基础",
+          icon: "ri:function-line",
+          link: "/langs/javascript/03-functions-scope/function-basics.md",
+        },
+        {
+          text: "箭头函数",
+          icon: "ri:arrow-right-line",
+          link: "/langs/javascript/03-functions-scope/arrow-functions.md",
+        },
+        {
+          text: "闭包",
+          icon: "ri:lock-line",
+          link: "/langs/javascript/03-functions-scope/closures.md",
+        },
+        {
+          text: "作用域",
+          icon: "ri:scope-line",
+          link: "/langs/javascript/03-functions-scope/scope.md",
+        },
+        {
+          text: "this 与上下文",
+          icon: "ri:cursor-line",
+          link: "/langs/javascript/03-functions-scope/this-context.md",
+        },
+      ],
+    },
+    {
+      text: "对象与原型",
+      icon: "ri:git-branch-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/04-objects-prototypes",
+      children: [
+        {
+          text: "对象与原型总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/04-objects-prototypes/README.md",
+        },
+        {
+          text: "对象进阶",
+          icon: "ri:shape-line",
+          link: "/langs/javascript/04-objects-prototypes/object-advanced.md",
+        },
+        {
+          text: "原型链",
+          icon: "ri:git-branch-line",
+          link: "/langs/javascript/04-objects-prototypes/prototypes.md",
+        },
+        {
+          text: "继承",
+          icon: "ri:git-merge-line",
+          link: "/langs/javascript/04-objects-prototypes/inheritance.md",
+        },
+        {
+          text: "类与面向对象",
+          icon: "ri:class-line",
+          link: "/langs/javascript/04-objects-prototypes/class-oop.md",
+        },
+      ],
+    },
+    {
+      text: "异步编程",
+      icon: "ri:refresh-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/05-async",
+      children: [
+        {
+          text: "异步编程总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/05-async/README.md",
+        },
+        {
+          text: "回调函数",
+          icon: "ri:arrow-go-back-line",
+          link: "/langs/javascript/05-async/callbacks.md",
+        },
+        {
+          text: "Promise",
+          icon: "ri:sparkling-line",
+          link: "/langs/javascript/05-async/promises.md",
+        },
+        {
+          text: "async/await",
+          icon: "ri:code-s-slash-line",
+          link: "/langs/javascript/05-async/async-await.md",
+        },
+        {
+          text: "事件循环",
+          icon: "ri:repeat-line",
+          link: "/langs/javascript/05-async/event-loop.md",
+        },
+      ],
+    },
+    {
+      text: "DOM 与事件",
+      icon: "ri:layout-2-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/06-dom-events",
+      children: [
+        {
+          text: "DOM 与事件总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/06-dom-events/README.md",
+        },
+        {
+          text: "DOM 基础",
+          icon: "ri:layout-2-line",
+          link: "/langs/javascript/06-dom-events/dom-basics.md",
+        },
+        {
+          text: "DOM 操作",
+          icon: "ri:edit-box-line",
+          link: "/langs/javascript/06-dom-events/dom-manipulation.md",
+        },
+        {
+          text: "事件处理",
+          icon: "ri:mouse-line",
+          link: "/langs/javascript/06-dom-events/events.md",
+        },
+        {
+          text: "事件委托",
+          icon: "ri:share-line",
+          link: "/langs/javascript/06-dom-events/event-delegation.md",
+        },
+      ],
+    },
+    {
+      text: "ES6+ 新特性",
+      icon: "ri:flashlight-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/07-es6-plus",
+      children: [
+        {
+          text: "ES6+ 总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/07-es6-plus/README.md",
+        },
+        {
+          text: "let 与 const",
+          icon: "ri:lock-line",
+          link: "/langs/javascript/07-es6-plus/let-const.md",
+        },
+        {
+          text: "模板字符串",
+          icon: "ri:format-line",
+          link: "/langs/javascript/07-es6-plus/template-literals.md",
+        },
+        {
+          text: "解构赋值",
+          icon: "ri:split-cells-horizontal",
+          link: "/langs/javascript/07-es6-plus/destructuring.md",
+        },
+        {
+          text: "展开与剩余",
+          icon: "ri:more-line",
+          link: "/langs/javascript/07-es6-plus/spread-rest.md",
+        },
+        {
+          text: "模块化",
+          icon: "ri:package-line",
+          link: "/langs/javascript/07-es6-plus/modules.md",
+        },
+        {
+          text: "Symbol",
+          icon: "ri:gemini-line",
+          link: "/langs/javascript/07-es6-plus/symbols.md",
+        },
+        {
+          text: "ES2023+",
+          icon: "ri:rocket-line",
+          link: "/langs/javascript/07-es6-plus/es2023-plus.md",
+        },
+      ],
+    },
+    {
+      text: "前端工程化",
+      icon: "ri:build-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/08-engineering",
+      children: [
+        {
+          text: "工程化总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/08-engineering/README.md",
+        },
+        {
+          text: "npm 包管理",
+          icon: "simple-icons:npm",
+          link: "/langs/javascript/08-engineering/npm.md",
+        },
+        {
+          text: "Webpack 打包",
+          icon: "logos:webpack",
+          link: "/langs/javascript/08-engineering/webpack.md",
+        },
+        {
+          text: "Vite 构建",
+          icon: "simple-icons:vite",
+          link: "/langs/javascript/08-engineering/vite.md",
+        },
+        {
+          text: "Babel 转译",
+          icon: "logos:babel",
+          link: "/langs/javascript/08-engineering/babel.md",
+        },
+        {
+          text: "工具链",
+          icon: "ri:tools-line",
+          link: "/langs/javascript/08-engineering/tooling.md",
+        },
+      ],
+    },
+    {
+      text: "框架与库",
+      icon: "ri:framework-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/09-frameworks",
+      children: [
+        {
+          text: "框架总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/09-frameworks/README.md",
+        },
+        {
+          text: "React",
+          icon: "logos:react",
+          link: "/langs/javascript/09-frameworks/react.md",
+        },
+        {
+          text: "Vue",
+          icon: "logos:vue",
+          link: "/langs/javascript/09-frameworks/vue.md",
+        },
+        {
+          text: "Angular",
+          icon: "logos:angular",
+          link: "/langs/javascript/09-frameworks/angular.md",
+        },
+        {
+          text: "UI 组件库",
+          icon: "ri:app-store-line",
+          link: "/langs/javascript/09-frameworks/ui-libraries.md",
+        },
+      ],
+    },
+    {
+      text: "Node.js 开发",
+      icon: "ri:server-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/10-nodejs",
+      children: [
+        {
+          text: "Node.js 总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/10-nodejs/README.md",
+        },
+        {
+          text: "Node.js 基础",
+          icon: "ri:node-tree",
+          link: "/langs/javascript/10-nodejs/node-basics.md",
+        },
+        {
+          text: "模块系统",
+          icon: "ri:package-line",
+          link: "/langs/javascript/10-nodejs/modules.md",
+        },
+        {
+          text: "文件操作",
+          icon: "ri:file-line",
+          link: "/langs/javascript/10-nodejs/file-system.md",
+        },
+        {
+          text: "HTTP 服务器",
+          icon: "ri:global-line",
+          link: "/langs/javascript/10-nodejs/http-server.md",
+        },
+        {
+          text: "NPM 包开发",
+          icon: "ri:upload-cloud-line",
+          link: "/langs/javascript/10-nodejs/npm-package.md",
+        },
+      ],
+    },
+    {
+      text: "性能优化",
+      icon: "ri:speed-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/11-performance",
+      children: [
+        {
+          text: "性能优化总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/11-performance/README.md",
+        },
+        {
+          text: "V8 引擎",
+          icon: "ri:cpu-line",
+          link: "/langs/javascript/11-performance/v8-engine.md",
+        },
+        {
+          text: "内存管理",
+          icon: "ri:database-2-line",
+          link: "/langs/javascript/11-performance/memory.md",
+        },
+        {
+          text: "代码优化",
+          icon: "ri:code-s-slash-line",
+          link: "/langs/javascript/11-performance/optimization.md",
+        },
+        {
+          text: "性能分析",
+          icon: "ri:bar-chart-line",
+          link: "/langs/javascript/11-performance/profiling.md",
+        },
+      ],
+    },
+    {
+      text: "测试与调试",
+      icon: "ri:bug-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/12-testing-debugging",
+      children: [
+        {
+          text: "测试调试总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/12-testing-debugging/README.md",
+        },
+        {
+          text: "调试技巧",
+          icon: "ri:search-eye-line",
+          link: "/langs/javascript/12-testing-debugging/debugging.md",
+        },
+        {
+          text: "单元测试",
+          icon: "ri:test-tube-line",
+          link: "/langs/javascript/12-testing-debugging/unit-testing.md",
+        },
+        {
+          text: "端到端测试",
+          icon: "ri:git-merge-line",
+          link: "/langs/javascript/12-testing-debugging/e2e-testing.md",
+        },
+        {
+          text: "代码检查",
+          icon: "ri:shield-check-line",
+          link: "/langs/javascript/12-testing-debugging/linting.md",
+        },
+      ],
+    },
+    {
+      text: "设计模式",
+      icon: "ri:layout-2-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/13-design-patterns",
+      children: [
+        {
+          text: "设计模式总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/13-design-patterns/README.md",
+        },
+        {
+          text: "创建型模式",
+          icon: "ri:add-circle-line",
+          link: "/langs/javascript/13-design-patterns/creational.md",
+        },
+        {
+          text: "结构型模式",
+          icon: "ri:layout-4-line",
+          link: "/langs/javascript/13-design-patterns/structural.md",
+        },
+        {
+          text: "行为型模式",
+          icon: "ri:git-merge-line",
+          link: "/langs/javascript/13-design-patterns/behavioral.md",
+        },
+      ],
+    },
+    {
+      text: "实战项目",
+      icon: "ri:code-box-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/javascript/14-practice",
+      children: [
+        {
+          text: "项目总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/javascript/14-practice/README.md",
+        },
+        {
+          text: "待办事项应用",
+          icon: "ri:checkbox-circle-line",
+          link: "/langs/javascript/14-practice/todo-app.md",
+        },
+        {
+          text: "天气应用",
+          icon: "ri:cloud-line",
+          link: "/langs/javascript/14-practice/weather-app.md",
+        },
+        {
+          text: "聊天应用",
+          icon: "ri:chat-3-line",
+          link: "/langs/javascript/14-practice/chat-app.md",
+        },
+      ],
+    },
+  ],
 });

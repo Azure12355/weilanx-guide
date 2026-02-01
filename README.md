@@ -9,7 +9,7 @@
 
 [![VuePress](https://img.shields.io/badge/VuePress-2.0-42b883?style=flat-square&logo=vue.js)](https://v2.vuepress.vuejs.org/) [![Theme Hope](https://img.shields.io/badge/Theme-Hope-2c3e50?style=flat-square&logo=vue.js)](https://theme-hope.vuejs.press/) [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE) [![GitHub Star](https://img.shields.io/github/stars/Azure12355/WeilanxGuide?style=social)](https://github.com/Azure12355/WeilanxGuide)
 
-[👀 在线预览](https://www.guide.weilanx.com) · [🐞 报告 Bug](https://github.com/Azure12355/weilanx-guide/issues) · [✨ 提出新特性](https://github.com/Azure12355/weilanx-guide/issues)
+[👀 在线预览](https://www.spacex.weilanx.com) · [🐞 报告 Bug](https://github.com/Azure12355/weilanx-guide/issues) · [✨ 提出新特性](https://github.com/Azure12355/weilanx-guide/issues)
 </div>
 
 ## 📖 简介

@@ -8,7 +8,9 @@
     "build": "NODE_OPTIONS=--max-old-space-size=8192 vuepress-vite build vuepress-hope",
     "clean-dev": "vuepress-vite dev vuepress-hope --clean-cache",
     "dev": "vuepress-vite dev vuepress-hope",
-    "update-package": "pnpm dlx vp-update"
+    "update-package": "pnpm dlx vp-update",
+    "serve": "npx serve vuepress-hope/.vuepress/dist",
+    "deploy": "./deploy.sh"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.26",

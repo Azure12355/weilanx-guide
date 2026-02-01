@@ -4,7 +4,7 @@ import {  zhNavbar } from "./navbar/index.js";
 import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://guide.weilanx.com/",
+  hostname: "https://spacex.weilanx.com/",
 
   favicon: "/logo.svg",
 

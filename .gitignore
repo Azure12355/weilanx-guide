@@ -2,10 +2,16 @@
 node_modules/
 vuepress-hope/.vuepress/.cache/
 vuepress-hope/.vuepress/.temp/
-vuepress-hope/.vuepress/dist/
+# dist 目录不再被忽略，因为 EdgeOne 需要预构建的文件
+# vuepress-hope/.vuepress/dist/
 vuepress-reco
 
 test/
 .DS_Store
 docs/**
 .serena/**
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*
+  

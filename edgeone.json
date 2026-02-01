@@ -1,0 +1,45 @@
+{
+  "name": "weilanx-guide-x",
+  "buildCommand": "echo 'Skipping build - using pre-built static files from dist directory'",
+  "installCommand": "echo 'Skipping install - using pre-built files'",
+  "outputDirectory": "vuepress-hope/.vuepress/dist",
+  "nodeVersion": "20.18.0",
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "max-age=7200"
+        }
+      ]
+    },
+    {
+      "source": "/assets/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "caches": [
+    {
+      "source": "/assets/*",
+      "cacheTtl": 31536000
+    },
+    {
+      "source": "/*.html",
+      "cacheTtl": 3600
+    }
+  ]
+}

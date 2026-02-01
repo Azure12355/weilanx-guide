@@ -1,7 +1,7 @@
 {
   "name": "weilanx-guide-x",
-  "buildCommand": "echo 'Skipping build - using pre-built static files from dist directory'",
-  "installCommand": "echo 'Skipping install - using pre-built files'",
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
   "outputDirectory": "vuepress-hope/.vuepress/dist",
   "nodeVersion": "20.18.0",
   "headers": [

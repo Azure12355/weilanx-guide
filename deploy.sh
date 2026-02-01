@@ -2,50 +2,39 @@
 
 set -e
 
-echo "🔨 开始本地构建..."
-echo "   使用 8GB 内存限制"
-
-# 清理旧的构建产物
-echo "🧹 清理旧文件..."
-rm -rf vuepress-hope/.vuepress/.temp
-rm -rf vuepress-hope/.vuepress/dist
-
-# 本地构建（使用足够的内存）
-echo "📦 正在构建项目..."
-NODE_OPTIONS=--max-old-space-size=8192 pnpm build
-
-echo ""
-echo "✅ 构建成功！"
+echo "📤 EdgeOne Pages 云端构建部署"
 echo ""
 
-# 询问是否部署
-read -p "📤 是否部署到 EdgeOne? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    echo "🚀 正在部署到 EdgeOne..."
-
-    # 使用 EdgeOne CLI 部署
-    # 注意: 需要先安装 edgeone-cli: pnpm add -D edgeone-cli
-    # 并配置好环境变量或 .env 文件
-    if command -v edgeone &> /dev/null; then
-        edgeone deploy vuepress-hope/.vuepress/dist
-    else
-        echo "❌ 未找到 edgeone-cli"
-        echo "💡 请安装: pnpm add -D edgeone-cli"
-        echo "   或使用: npm install -g edgeone-cli"
-        exit 1
+# 检查是否有未提交的更改
+if [ -n "$(git status --porcelain)" ]; then
+    echo "⚠️  检测到未提交的更改"
+    git status --short
+    echo ""
+    read -p "是否先提交更改? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        read -p "请输入提交信息: " commit_msg
+        git add .
+        git commit -m "$commit_msg"
     fi
+fi
 
+echo "🚀 推送到 GitHub..."
+echo ""
+echo "✅ EdgeOne Pages 将自动:"
+echo "   1. 检测到推送"
+echo "   2. 在云端执行 pnpm install"
+echo "   3. 在云端执行 pnpm build"
+echo "   4. 自动部署到 CDN"
+echo ""
+read -p "继续推送? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    git push
     echo ""
-    echo "🎉 部署完成！"
+    echo "🎉 推送成功！"
     echo "   访问 https://guide.weilanx.com 查看更新"
+    echo "   部署进度可在 EdgeOne 控制台查看"
 else
-    echo ""
-    echo "⏸️  构建完成，但未部署"
-    echo "💡 本地预览命令:"
-    echo "   pnpm serve"
-    echo ""
-    echo "📤 稍后部署命令:"
-    echo "   edgeone deploy vuepress-hope/.vuepress/dist"
+    echo "已取消"
 fi

@@ -16,15 +16,35 @@ export default defineUserConfig({
 
   bundler: viteBundler({
     viteOptions: {
+      build: {
+        // 设置 chunk 大小警告限制（单位：KB）
+        chunkSizeWarningLimit: 1000,
+        // 启用 CSS 代码分割
+        cssCodeSplit: true,
+        // 目标浏览器
+        target: 'es2015',
+        // 输出目录
+        outDir: 'dist',
+        // 关闭 sourcemap 以减少内存占用
+        sourcemap: false,
+      },
+      // 减少 CSS 预处理的内存占用
       css: {
         preprocessorOptions: {
           scss: {
-            // 屏蔽具体的警告类型，截图里是 [if-function]
             silenceDeprecations: ['legacy-js-api', 'if-function', 'import'],
-            // 或者直接简单粗暴，忽略依赖包中的警告
             quietDeps: true,
           },
         },
+      },
+      // 优化依赖预构建
+      optimizeDeps: {
+        include: [
+          'vue',
+          'vuepress',
+          '@vuepress/bundler-vite',
+          'vuepress-theme-hope',
+        ],
       },
     },
   }),

@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "vuepress-vite build vuepress-hope",
+    "build": "NODE_OPTIONS=--max-old-space-size=8192 vuepress-vite build vuepress-hope",
     "clean-dev": "vuepress-vite dev vuepress-hope --clean-cache",
     "dev": "vuepress-vite dev vuepress-hope",
     "update-package": "pnpm dlx vp-update"

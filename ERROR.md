@@ -304,12 +304,38 @@ Syntax error in graph
 find vuepress-hope/java/base -name "*.md" -exec sed -i '' 's/<br\/>/ /g' {} \;
 ```
 
+### 3. CI 构建时内存溢出错误
+
+**错误信息**：
+```
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+```
+
+**原因**：
+Node.js 的默认内存限制（约 2GB）不足以处理大型 VuePress 项目的构建。
+
+**解决方案**：
+在 `package.json` 的 build 脚本中增加 Node.js 内存限制：
+
+```json
+{
+  "scripts": {
+    "build": "NODE_OPTIONS=--max-old-space-size=8192 vuepress-vite build vuepress-hope"
+  }
+}
+```
+
+**修复文件**：`package.json`
+
+**修复日期**：2025-02-01
+
 ---
 
 ## 更新日志
 
 | 日期 | 错误类型 | 影响文件 | 状态 |
 |------|----------|----------|------|
+| 2025-02-01 | CI 构建内存溢出 | package.json | ✅ 已修复 |
 | 2025-01-31 | Mermaid 节点运算符错误 | operators.md | ✅ 已修复 |
 | 2025-01-31 | Mermaid 节点引号错误 | variables.md, string.md | ✅ 已修复 |
 | 2025-01-31 | Mermaid Timeline 括号错误 | overview.md | ✅ 已修复 |

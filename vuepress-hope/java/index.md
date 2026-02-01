@@ -5,17 +5,21 @@ icon: lightbulb
 
 ## 功能亮点
 
+欢迎访问 [Java 攻城狮](/java/) 板块，包含：
+
 ### Java基础篇
 
-- [基础语法](/java/base/01-basic-syntax/README.md)
-- [面向对象](/java/base/02-oop/README.md)
-- [数组与字符串](/java/base/03-array-string/README.md)
+- 语法基础
+- 面向对象
+- 数组与字符串
+- 集合框架
 
 ### Java进阶篇
 
-- [集合框架](/java/advance/01-collection/README.md)
-- [IO与NIO](/java/advance/02-io-nio/README.md)
-- [反射与注解](/java/advance/03-reflect/README.md)
+- IO 系统
+- 多线程并发
+- 网络编程
+- 通用API
 
 ### JUC并发编程
 

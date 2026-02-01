@@ -1,7 +1,7 @@
 {
   "name": "weilanx-guide-x",
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
+  "buildCommand": "echo 'Skipping build - using EdgeOne CLI deploy'",
+  "installCommand": "echo 'Skipping install - using EdgeOne CLI deploy'",
   "outputDirectory": "vuepress-hope/.vuepress/dist",
   "nodeVersion": "20.18.0",
   "headers": [

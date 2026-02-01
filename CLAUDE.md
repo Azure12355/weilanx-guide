@@ -10,6 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **GitHub**: azure12355/weilanx-guide
 - **主题**: vuepress-theme-hope 2.0.0-rc.101
 - **作者**: 蔚蓝Lynx
+- **部署平台**: 腾讯云 EdgeOne Pages
 
 ## 官方文档参考
 
@@ -39,6 +40,8 @@ vuepress/
 │   │   │   └── index.ts         # 侧边栏结构定义
 │   │   ├── public/              # 静态资源 (图片、favicon)
 │   │   │   └── icons/           # SVG 图标文件
+│   │   ├── dist/                # 构建输出 (不进入 git)
+│   │   ├── .temp/               # 临时文件 (gitignore)
 │   │   └── styles/              # 自定义 SCSS 样式
 │   ├── index.md                 # 首页
 │   ├── langs/                   # 编程语言总览
@@ -51,7 +54,12 @@ vuepress/
 │   ├── java/                    # Java 攻城狮板块
 │   ├── algo/                    # 算法 (占位)
 │   └── 408/                     # 计算机基础 (占位)
-└── package.json
+├── .edgeone/                    # EdgeOne Pages 配置
+│   └── project.json             # 项目关联信息
+├── deploy.sh                    # 部署脚本 (EdgeOne CLI)
+├── edgeone.json                 # EdgeOne Pages 配置
+├── package.json                 # 项目依赖
+└── CLAUDE.md                    # 本文件
 ```
 
 ## 常用命令
@@ -66,21 +74,86 @@ pnpm clean-dev
 # 生产构建
 pnpm build
 
+# 本地预览构建产物
+pnpm serve
+
 # 更新 VuePress 包
 pnpm update-package
+
+# 部署到 EdgeOne Pages (推荐)
+pnpm deploy
 ```
+
+## EdgeOne Pages 部署
+
+### 部署方式
+
+本项目使用 **EdgeOne CLI** 进行本地构建 + 直接上传部署。
+
+### 快速部署
+
+```bash
+# 一键构建 + 部署
+pnpm deploy
+```
+
+脚本会自动：
+1. 清理旧的构建产物
+2. 本地构建项目
+3. 上传到 EdgeOne Pages
+
+### 手动分步操作
+
+```bash
+# 1. 本地构建
+pnpm build
+
+# 2. 部署到 EdgeOne
+edgeone pages deploy vuepress-hope/.vuepress/dist
+```
+
+### EdgeOne CLI 常用命令
+
+```bash
+# 登录 EdgeOne
+edgeone login
+
+# 查看当前登录信息
+edgeone whoami
+
+# 关联项目
+edgeone pages link
+
+# 部署
+edgeone pages deploy [directory]
+```
+
+### 项目配置
+
+- **项目名称**: spacex
+- **项目 ID**: pages-hrd9zhqkxmye
+- **部署类型**: Upload (直接上传)
+- **环境**: Production
+
+### 注意事项
+
+1. **dist 不进入 git**: 构建产物不提交到仓库，减小仓库体积
+2. **内存配置**: 构建时使用 `NODE_OPTIONS=--max-old-space-size=8192` (8GB)
+3. **Node 版本**: 20.18.0
 
 ## 关键架构说明
 
 ### 源码目录
 - **内容位于 `vuepress-hope/`**，而非项目根目录
 - **构建输出**: `vuepress-hope/.vuepress/dist/`
+- **dist 不进入 git**，使用 EdgeOne CLI 直接上传
 
 ### 配置文件
 - **config.ts**: 基础配置、bundler (Vite + SCSS)
 - **theme.ts**: 主题设置、Markdown 扩展、插件配置
 - **navbar/index.ts**: 顶部导航栏结构
 - **sidebar/index.ts**: 左侧侧边栏导航
+- **edgeone.json**: EdgeOne Pages 部署配置
 
 ### 导航结构
 内容按主要板块组织：
@@ -326,12 +399,6 @@ flowchart TD
 ### 已知错误案例
 
 详细的错误记录和修复历史请参考项目根目录的 **[ERROR.md](/ERROR.md)** 文件。
-
-## 部署
-
-- GitHub Actions 在推送到 `main` 分支时自动部署到 `gh-pages` 分支
-- 部署目录：`vuepress-hope/.vuepress/dist/`
-- 内存配置：`NODE_OPTIONS=--max-old-space-size=8192`
 
 ## 官方文档快速参考
 

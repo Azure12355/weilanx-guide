@@ -1,6 +1,6 @@
 ---
 title: 单元测试
-icon:ri-test-tube-fill
+icon: ri:test-tube-fill
 order: 2
 ---
 

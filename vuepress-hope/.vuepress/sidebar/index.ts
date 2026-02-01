@@ -1911,4 +1911,587 @@ export const zhSidebar = sidebar({
       ],
     },
   ],
+
+  "/langs/go/": [
+    {
+      text: "Go 概述",
+      icon: "logos:go",
+      link: "/langs/go/",
+    },
+    {
+      text: "概述与环境",
+      icon: "ri:information-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/00-overview",
+      children: [
+        {
+          text: "概述总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/00-overview/README.md",
+        },
+        {
+          text: "Go 概述",
+          icon: "ri:book-2-line",
+          link: "/langs/go/00-overview/go-overview.md",
+        },
+        {
+          text: "环境安装配置",
+          icon: "ri:download-cloud-2-line",
+          link: "/langs/go/00-overview/go-env.md",
+        },
+        {
+          text: "Hello World",
+          icon: "ri:hand-coin-line",
+          link: "/langs/go/00-overview/hello-world.md",
+        },
+      ],
+    },
+    {
+      text: "基础语法",
+      icon: "ri:code-s-slash-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/01-basics",
+      children: [
+        {
+          text: "基础语法总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/01-basics/README.md",
+        },
+        {
+          text: "变量与常量",
+          icon: "ri:database-2-line",
+          link: "/langs/go/01-basics/variables.md",
+        },
+        {
+          text: "数据类型",
+          icon: "ri:checkbox-blank-circle-line",
+          link: "/langs/go/01-basics/data-types.md",
+        },
+        {
+          text: "运算符",
+          icon: "ri:calculator-line",
+          link: "/langs/go/01-basics/operators.md",
+        },
+        {
+          text: "流程控制",
+          icon: "ri:flow-chart",
+          link: "/langs/go/01-basics/control-flow.md",
+        },
+      ],
+    },
+    {
+      text: "复合类型",
+      icon: "ri:layout-grid-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/02-composite-types",
+      children: [
+        {
+          text: "复合类型总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/02-composite-types/README.md",
+        },
+        {
+          text: "数组与切片",
+          icon: "ri:list-ordered",
+          link: "/langs/go/02-composite-types/arrays.md",
+        },
+        {
+          text: "Map",
+          icon: "ri:map-2-line",
+          link: "/langs/go/02-composite-types/maps.md",
+        },
+        {
+          text: "结构体",
+          icon: "ri:shape-line",
+          link: "/langs/go/02-composite-types/structs.md",
+        },
+        {
+          text: "指针",
+          icon: "ri:cursor-line",
+          link: "/langs/go/02-composite-types/pointers.md",
+        },
+      ],
+    },
+    {
+      text: "函数与方法",
+      icon: "ri:function-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/03-functions",
+      children: [
+        {
+          text: "函数总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/03-functions/README.md",
+        },
+        {
+          text: "函数基础",
+          icon: "ri:function-line",
+          link: "/langs/go/03-functions/function-basics.md",
+        },
+        {
+          text: "多返回值",
+          icon: "ri:git-branch-line",
+          link: "/langs/go/03-functions/multiple-return.md",
+        },
+        {
+          text: "可变参数",
+          icon: "ri:more-line",
+          link: "/langs/go/03-functions/variadic.md",
+        },
+        {
+          text: "匿名函数与闭包",
+          icon: "ri:lock-line",
+          link: "/langs/go/03-functions/closures.md",
+        },
+        {
+          text: "defer 语句",
+          icon: "ri:time-line",
+          link: "/langs/go/03-functions/defer.md",
+        },
+        {
+          text: "方法",
+          icon: "ri:git-merge-line",
+          link: "/langs/go/03-functions/methods.md",
+        },
+      ],
+    },
+    {
+      text: "接口与类型系统",
+      icon: "ri:stack-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/04-interfaces",
+      children: [
+        {
+          text: "接口总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/04-interfaces/README.md",
+        },
+        {
+          text: "接口定义",
+          icon: "ri:code-box-line",
+          link: "/langs/go/04-interfaces/interface-definition.md",
+        },
+        {
+          text: "接口实现",
+          icon: "ri:git-merge-line",
+          link: "/langs/go/04-interfaces/interface-implementation.md",
+        },
+        {
+          text: "空接口与类型断言",
+          icon: "ri:question-line",
+          link: "/langs/go/04-interfaces/type-assertion.md",
+        },
+        {
+          text: "类型嵌入",
+          icon: "ri:inbox-line",
+          link: "/langs/go/04-interfaces/type-embedding.md",
+        },
+        {
+          text: "接口组合",
+          icon: "ri:layers-line",
+          link: "/langs/go/04-interfaces/interface-composition.md",
+        },
+      ],
+    },
+    {
+      text: "并发编程",
+      icon: "ri:git-merge-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/05-concurrency",
+      children: [
+        {
+          text: "并发总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/05-concurrency/README.md",
+        },
+        {
+          text: "Goroutines",
+          icon: "ri:team-line",
+          link: "/langs/go/05-concurrency/goroutines.md",
+        },
+        {
+          text: "Channel 详解",
+          icon: "ri:flow-chart",
+          link: "/langs/go/05-concurrency/channels.md",
+        },
+        {
+          text: "Select 语句",
+          icon: "ri:route",
+          link: "/langs/go/05-concurrency/select.md",
+        },
+        {
+          text: "并发模式",
+          icon: "ri:layout-2-line",
+          link: "/langs/go/05-concurrency/patterns.md",
+        },
+        {
+          text: "同步原语",
+          icon: "ri:lock-line",
+          link: "/langs/go/05-concurrency/sync-atomic.md",
+        },
+        {
+          text: "Context 包",
+          icon: "ri:global-line",
+          link: "/langs/go/05-concurrency/context.md",
+        },
+      ],
+    },
+    {
+      text: "错误处理与测试",
+      icon: "ri:bug-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/06-error-testing",
+      children: [
+        {
+          text: "错误处理与测试总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/06-error-testing/README.md",
+        },
+        {
+          text: "错误处理",
+          icon: "ri:alert-line",
+          link: "/langs/go/06-error-testing/error-handling.md",
+        },
+        {
+          text: "自定义错误",
+          icon: "ri:settings-3-line",
+          link: "/langs/go/06-error-testing/custom-errors.md",
+        },
+        {
+          text: "Panic 与 Recover",
+          icon: "ri:shield-line",
+          link: "/langs/go/06-error-testing/panic-recover.md",
+        },
+        {
+          text: "单元测试",
+          icon: "ri:test-tube-line",
+          link: "/langs/go/06-error-testing/unit-testing.md",
+        },
+        {
+          text: "基准测试",
+          icon: "ri:speed-line",
+          link: "/langs/go/06-error-testing/benchmark.md",
+        },
+        {
+          text: "测试覆盖率",
+          icon: "ri:pie-chart-line",
+          link: "/langs/go/06-error-testing/coverage.md",
+        },
+      ],
+    },
+    {
+      text: "包管理与模块",
+      icon: "ri:package-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/07-packages",
+      children: [
+        {
+          text: "包管理总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/07-packages/README.md",
+        },
+        {
+          text: "包概述",
+          icon: "ri:folder-line",
+          link: "/langs/go/07-packages/packages.md",
+        },
+        {
+          text: "导入与导出",
+          icon: "ri:import-line",
+          link: "/langs/go/07-packages/import-export.md",
+        },
+        {
+          text: "Go Modules",
+          icon: "ri:database-2-line",
+          link: "/langs/go/07-packages/go-modules.md",
+        },
+        {
+          text: "依赖管理",
+          icon: "ri:links-line",
+          link: "/langs/go/07-packages/dependency.md",
+        },
+        {
+          text: "常用标准库",
+          icon: "ri:book-mark-line",
+          link: "/langs/go/07-packages/stdlib.md",
+        },
+      ],
+    },
+    {
+      text: "文件与IO",
+      icon: "ri:file-text-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/08-io",
+      children: [
+        {
+          text: "文件与IO总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/08-io/README.md",
+        },
+        {
+          text: "文件读写",
+          icon: "ri:file-line",
+          link: "/langs/go/08-io/file-operations.md",
+        },
+        {
+          text: "缓冲IO",
+          icon: "ri:speed-line",
+          link: "/langs/go/08-io/buffered-io.md",
+        },
+        {
+          text: "IO 接口",
+          icon: "ri:swap-line",
+          link: "/langs/go/08-io/io-interfaces.md",
+        },
+        {
+          text: "JSON 处理",
+          icon: "ri:braces-line",
+          link: "/langs/go/08-io/json.md",
+        },
+        {
+          text: "HTTP 编程",
+          icon: "ri:global-line",
+          link: "/langs/go/08-io/http.md",
+        },
+      ],
+    },
+    {
+      text: "反射与泛型",
+      icon: "ri:lightbulb-flash-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/09-reflection-generics",
+      children: [
+        {
+          text: "反射与泛型总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/09-reflection-generics/README.md",
+        },
+        {
+          text: "反射机制",
+          icon: "ri:reflection-line",
+          link: "/langs/go/09-reflection-generics/reflection.md",
+        },
+        {
+          text: "泛型基础",
+          icon: "ri:code-box-line",
+          link: "/langs/go/09-reflection-generics/generics.md",
+        },
+        {
+          text: "类型约束",
+          icon: "ri:constraint-line",
+          link: "/langs/go/09-reflection-generics/constraints.md",
+        },
+        {
+          text: "泛型实践",
+          icon: "ri:tools-line",
+          link: "/langs/go/09-reflection-generics/generics-practice.md",
+        },
+      ],
+    },
+    {
+      text: "性能优化",
+      icon: "ri:speed-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/10-performance",
+      children: [
+        {
+          text: "性能优化总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/10-performance/README.md",
+        },
+        {
+          text: "内存管理",
+          icon: "ri:database-2-line",
+          link: "/langs/go/10-performance/memory.md",
+        },
+        {
+          text: "垃圾回收",
+          icon: "ri:delete-bin-line",
+          link: "/langs/go/10-performance/gc.md",
+        },
+        {
+          text: "性能分析",
+          icon: "ri:bar-chart-line",
+          link: "/langs/go/10-performance/profiling.md",
+        },
+        {
+          text: "优化实践",
+          icon: "ri:rocket-line",
+          link: "/langs/go/10-performance/optimization.md",
+        },
+      ],
+    },
+    {
+      text: "工程实践",
+      icon: "ri:build-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/11-engineering",
+      children: [
+        {
+          text: "工程实践总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/11-engineering/README.md",
+        },
+        {
+          text: "项目结构",
+          icon: "ri:folder-line",
+          link: "/langs/go/11-engineering/project-layout.md",
+        },
+        {
+          text: "代码规范",
+          icon: "ri:code-s-slash-line",
+          link: "/langs/go/11-engineering/code-style.md",
+        },
+        {
+          text: "错误处理最佳实践",
+          icon: "ri:shield-check-line",
+          link: "/langs/go/11-engineering/error-best-practices.md",
+        },
+        {
+          text: "日志记录",
+          icon: "ri:file-text-line",
+          link: "/langs/go/11-engineering/logging.md",
+        },
+        {
+          text: "配置管理",
+          icon: "ri:settings-3-line",
+          link: "/langs/go/11-engineering/config.md",
+        },
+        {
+          text: "容器化部署",
+          icon: "simple-icons:docker",
+          link: "/langs/go/11-engineering/docker.md",
+        },
+      ],
+    },
+    {
+      text: "Web 开发",
+      icon: "ri:global-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/12-web",
+      children: [
+        {
+          text: "Web 开发总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/12-web/README.md",
+        },
+        {
+          text: "HTTP 服务器",
+          icon: "ri:server-line",
+          link: "/langs/go/12-web/http-server.md",
+        },
+        {
+          text: "Gin 框架",
+          icon: "simple-icons:gin",
+          link: "/langs/go/12-web/gin.md",
+        },
+        {
+          text: "Echo 框架",
+          icon: "simple-icons:echo",
+          link: "/langs/go/12-web/echo.md",
+        },
+        {
+          text: "RESTful API",
+          icon: "ri:api-line",
+          link: "/langs/go/12-web/restful.md",
+        },
+        {
+          text: "中间件",
+          icon: "ri:middleware-line",
+          link: "/langs/go/12-web/middleware.md",
+        },
+        {
+          text: "数据库操作",
+          icon: "ri:database-2-line",
+          link: "/langs/go/12-web/database.md",
+        },
+      ],
+    },
+    {
+      text: "微服务架构",
+      icon: "ri:node-tree",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/13-microservices",
+      children: [
+        {
+          text: "微服务总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/13-microservices/README.md",
+        },
+        {
+          text: "微服务架构",
+          icon: "ri:layout-2-line",
+          link: "/langs/go/13-microservices/architecture.md",
+        },
+        {
+          text: "gRPC",
+          icon: "ri:exchange-line",
+          link: "/langs/go/13-microservices/grpc.md",
+        },
+        {
+          text: "服务注册发现",
+          icon: "ri:search-eye-line",
+          link: "/langs/go/13-microservices/service-discovery.md",
+        },
+        {
+          text: "分布式追踪",
+          icon: "ri:route",
+          link: "/langs/go/13-microservices/tracing.md",
+        },
+        {
+          text: "消息队列",
+          icon: "ri:chat-3-line",
+          link: "/langs/go/13-microservices/message-queue.md",
+        },
+      ],
+    },
+    {
+      text: "实战项目",
+      icon: "ri:code-box-line",
+      collapsible: true,
+      expanded: false,
+      prefix: "/langs/go/14-practice",
+      children: [
+        {
+          text: "项目总览",
+          icon: "ri:menu-2-line",
+          link: "/langs/go/14-practice/README.md",
+        },
+        {
+          text: "CLI 工具",
+          icon: "ri:terminal-line",
+          link: "/langs/go/14-practice/cli-tool.md",
+        },
+        {
+          text: "Web 服务",
+          icon: "ri:server-line",
+          link: "/langs/go/14-practice/web-service.md",
+        },
+        {
+          text: "聊天应用",
+          icon: "ri:chat-3-line",
+          link: "/langs/go/14-practice/chat-app.md",
+        },
+        {
+          text: "微服务项目",
+          icon: "ri:node-tree",
+          link: "/langs/go/14-practice/microservice.md",
+        },
+      ],
+    },
+  ],
 });

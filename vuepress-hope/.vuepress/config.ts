@@ -23,8 +23,6 @@ export default defineUserConfig({
         cssCodeSplit: true,
         // 目标浏览器
         target: 'es2015',
-        // 输出目录
-        outDir: 'dist',
         // 关闭 sourcemap 以减少内存占用
         sourcemap: false,
       },

@@ -9,7 +9,10 @@
     "build:low": "vuepress-vite build vuepress-hope",
     "clean-dev": "vuepress-vite dev vuepress-hope --clean-cache",
     "dev": "vuepress-vite dev vuepress-hope",
-    "update-package": "pnpm dlx vp-update"
+    "update-package": "pnpm dlx vp-update",
+    "serve": "npx serve vuepress-hope/.vuepress/dist",
+    "deploy": "./deploy.sh",
+    "deploy:edgeone": "edgeone deploy vuepress-hope/.vuepress/dist"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.26",

@@ -135,4 +135,16 @@ export const zhNavbar = navbar([
       },
     ],
   },
+
+  {
+    text: "开源教程",
+    icon: "ri:open-source-line",
+    link: "/tutorials/",
+  },
+
+  {
+    text: "蔚蓝博客",
+    icon: "ri:quill-pen-line",
+    link: "https://blog.weilanx.com",
+  },
 ]);

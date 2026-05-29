@@ -10,3 +10,4 @@ test/
 docs/**
 .serena/**
 .edgeone/
+.playwright-cli/

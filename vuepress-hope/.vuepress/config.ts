@@ -6,6 +6,15 @@ import theme from "./theme.js";
 export default defineUserConfig({
   base: "/",
 
+  // Preconnect to Iconify CDN for faster icon resolution (HTTPS handshake + DNS)
+  // covers ri:* and simple-icons:* — both fetched via api.iconify.design
+  head: [
+    ["link", { rel: "preconnect", href: "https://api.iconify.design" }],
+    ["link", { rel: "dns-prefetch", href: "https://api.iconify.design" }],
+    ["link", { rel: "preconnect", href: "https://api.simplesvg.com" }],
+    ["link", { rel: "preconnect", href: "https://api.unisvg.com" }],
+  ],
+
   locales: {
     "/": {
       lang: "zh-CN",

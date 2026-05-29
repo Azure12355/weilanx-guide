@@ -142,7 +142,8 @@ export default hopeTheme({
     },
 
     icon: {
-      prefix: "fa6-solid:",
+      assets: "iconify",
+      prefix: "ri:",
     },
 
     // Install @vuepress/plugin-pwa and uncomment these if you want a PWA

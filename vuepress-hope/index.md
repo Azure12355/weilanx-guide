@@ -1002,6 +1002,8 @@ font-weight:800;margin:0 0 12px;color:var(--w-deep);
 font-family:var(--w-serif);font-style:italic;
 background:linear-gradient(135deg,var(--w-primary),#5b73ff);
 -webkit-background-clip:text;background-clip:text;color:transparent;
+/* fix: italic last glyph overhang gets clipped by background-clip:text */
+display:inline-block;padding-right:.18em;margin-right:-.06em;
 }
 .wlx-sec-lead{font-size:16px;color:var(--w-ink2);max-width:600px;margin:0 auto;line-height:1.6}
 
@@ -1181,6 +1183,107 @@ html[data-theme="dark"] .wlx-tech-name{color:#f0f2fa}
 html[data-theme="dark"] .wlx-const{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);color:#f0f2fa !important}
 html[data-theme="dark"] .wlx-const-body p{color:#9ea4c6}
 html[data-theme="dark"] .wlx-cta-mini{color:#f0f2fa}
+
+/* === Dark mode contrast patch — all hard-coded ink/deep colors lift to bright === */
+html[data-theme="dark"] .wlx-card-tag{color:#bccaff}
+html[data-theme="dark"] .wlx-card-tag::before{background:rgba(188,202,255,.5)}
+html[data-theme="dark"] .wlx-bignum-val{
+background:linear-gradient(135deg,#bccaff 0%,#a3b8ff 60%,#7d92ff 100%);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+text-shadow:0 8px 24px rgba(125,146,255,.35);
+}
+html[data-theme="dark"] .wlx-bignum-plus{color:#bccaff}
+html[data-theme="dark"] .wlx-bignum-cap{color:#9ea4c6}
+html[data-theme="dark"] .wlx-list li{color:#cfd3e6}
+html[data-theme="dark"] .wlx-list li b{color:#f0f2fa}
+html[data-theme="dark"] .wlx-list li em{color:#9ea4c6}
+html[data-theme="dark"] .wlx-badge-live{background:rgba(125,146,255,.18);border-color:rgba(125,146,255,.32);color:#f0f2fa}
+html[data-theme="dark"] .wlx-badge-live .wlx-lvdot{background:#bccaff;box-shadow:0 0 0 4px rgba(188,202,255,.18)}
+html[data-theme="dark"] .wlx-badge-green{background:rgba(163,255,205,.16);border-color:rgba(163,255,205,.32)}
+html[data-theme="dark"] .wlx-cta-mini i{background:rgba(125,146,255,.22);color:#f0f2fa}
+html[data-theme="dark"] .wlx-card-left:hover .wlx-cta-mini i,
+html[data-theme="dark"] .wlx-card-right:hover .wlx-cta-mini i{background:#bccaff;color:#0a0f4a}
+html[data-theme="dark"] .wlx-blog-num{
+background:linear-gradient(135deg,#bccaff 0%,#a3b8ff 60%,#7d92ff 100%);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+html[data-theme="dark"] .wlx-blog-num em{color:#a3b8ff;-webkit-text-fill-color:#a3b8ff}
+html[data-theme="dark"] .wlx-blog-stats-cap small{color:#9ea4c6}
+html[data-theme="dark"] .wlx-card-desc b{color:#bccaff}
+html[data-theme="dark"] .wlx-hire-desc{color:#9ea4c6}
+html[data-theme="dark"] .wlx-hire-desc b{color:#bccaff}
+html[data-theme="dark"] .wlx-stack span{background:rgba(125,146,255,.14);border-color:rgba(125,146,255,.28);color:#f0f2fa}
+html[data-theme="dark"] .wlx-card-right:hover .wlx-stack span{background:rgba(125,146,255,.22)}
+html[data-theme="dark"] .wlx-blog-tag{color:#bccaff}
+html[data-theme="dark"] .wlx-pen{background:linear-gradient(135deg,#5b73ff,#7d92ff);box-shadow:0 4px 10px -2px rgba(125,146,255,.6)}
+html[data-theme="dark"] .wlx-badge-mini{background:rgba(125,146,255,.16);color:#bccaff}
+html[data-theme="dark"] .wlx-corner{background:rgba(125,146,255,.12);border-color:rgba(125,146,255,.5);color:#bccaff}
+html[data-theme="dark"] .wlx-card:hover .wlx-corner{background:#bccaff;color:#0a0f4a;border-color:#bccaff}
+html[data-theme="dark"] .wlx-phi-num{color:#bccaff}
+html[data-theme="dark"] .wlx-phi-zh{color:#bccaff}
+html[data-theme="dark"] .wlx-phi-tag{color:#bccaff}
+html[data-theme="dark"] .wlx-phi-icon svg [fill="#1a3cff"]{fill:#7d92ff}
+html[data-theme="dark"] .wlx-phi-icon svg [stroke="#1a3cff"]{stroke:#7d92ff}
+html[data-theme="dark"] .wlx-rm-item h4{color:#f0f2fa}
+html[data-theme="dark"] .wlx-rm-item p{color:#9ea4c6}
+html[data-theme="dark"] .wlx-rm-dot{background:rgba(125,146,255,.25);border-color:#7d92ff}
+html[data-theme="dark"] .wlx-rm-item.active .wlx-rm-dot{background:#7d92ff;box-shadow:0 0 16px rgba(125,146,255,.6)}
+html[data-theme="dark"] .wlx-rm-pulse{border-color:#7d92ff}
+html[data-theme="dark"] .wlx-rm-line{background:linear-gradient(90deg,#7d92ff,#bccaff)}
+html[data-theme="dark"] .wlx-const-body h3{color:#f0f2fa}
+html[data-theme="dark"] .wlx-const-arrow{color:#9ea4c6}
+html[data-theme="dark"] .wlx-tech-name{color:#f0f2fa}
+html[data-theme="dark"] .wlx-tech-count{color:#9ea4c6}
+html[data-theme="dark"] .wlx-sec-tag{background:rgba(125,146,255,.14);color:#bccaff}
+html[data-theme="dark"] .wlx-italic{
+background:linear-gradient(135deg,#bccaff,#7d92ff);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+html[data-theme="dark"] .wlx-sec-lead{color:#9ea4c6}
+html[data-theme="dark"] .wlx-sub{color:#cfd3e6}
+html[data-theme="dark"] .wlx-sub b{color:#bccaff}
+html[data-theme="dark"] .wlx-title .wlx-accent{
+background:linear-gradient(135deg,#bccaff 0%,#dde3ff 50%,#bccaff 100%);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+html[data-theme="dark"] .wlx-star{color:#bccaff}
+html[data-theme="dark"] .wlx-slogan{
+background:linear-gradient(115deg,#bccaff 0%,#7d92ff 35%,#dde3ff 50%,#7d92ff 75%,#bccaff 100%);
+background-size:200% 100%;
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+html[data-theme="dark"] .wlx-eyebrow{color:#bccaff}
+html[data-theme="dark"] .wlx-spark{color:#bccaff;-webkit-text-fill-color:#bccaff;filter:drop-shadow(0 0 8px rgba(188,202,255,.6))}
+html[data-theme="dark"] .wlx-deco{color:rgba(188,202,255,.4);-webkit-text-fill-color:rgba(188,202,255,.4)}
+html[data-theme="dark"] .wlx-deco .wlx-line{background:linear-gradient(90deg,transparent,rgba(188,202,255,.5))}
+html[data-theme="dark"] .wlx-deco.right .wlx-line{background:linear-gradient(90deg,rgba(188,202,255,.5),transparent)}
+html[data-theme="dark"] .wlx-meta-item b{color:#bccaff}
+html[data-theme="dark"] .wlx-motto-line{
+background:linear-gradient(115deg,#bccaff,#7d92ff 35%,#dde3ff 70%,#7d92ff);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+html[data-theme="dark"] .wlx-sign{color:#bccaff}
+html[data-theme="dark"] .wlx-hire-title .wlx-me{
+background:linear-gradient(135deg,#bccaff,#dde3ff 50%,#7d92ff);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+html[data-theme="dark"] .wlx-hire-title .wlx-arrow-pulse{background:linear-gradient(135deg,#5b73ff,#7d92ff);color:#fff}
+html[data-theme="dark"] .wlx-blog-underline{background:linear-gradient(90deg,#7d92ff,#bccaff)}
+html[data-theme="dark"] .wlx-blog-stats{background:linear-gradient(135deg,rgba(125,146,255,.14),rgba(125,146,255,.06));border-color:rgba(125,146,255,.22)}
+html[data-theme="dark"] .wlx-const-bar{background:var(--ca,#7d92ff)}
+
+/* === Iconify performance + consistency === */
+/* All iconify icons inherit current text color, scale crisply at any size */
+iconify-icon{
+display:inline-block;
+width:1em;height:1em;
+vertical-align:-.125em;
+color:inherit;
+font-style:normal;
+}
+/* Reserve space so layout doesn't jump while icons resolve */
+iconify-icon[data-icon]:not([loaded]){opacity:0;transition:opacity .2s}
+iconify-icon[loaded]{opacity:1}
 
 /* ===== Responsive ===== */
 @media (max-width:980px){
